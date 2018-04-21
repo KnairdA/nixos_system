@@ -71,9 +71,15 @@
     shell        = pkgs.fish;
   };
 
-  environment.systemPackages = let
-    custom_vim = import ./pkgs/vim/vim.nix pkgs;
-  in with pkgs; [
-    ntfs3g htop fish custom_vim
-  ];
+  environment = {
+    systemPackages = let
+      custom_vim = import ./pkgs/vim/vim.nix pkgs;
+    in with pkgs; [
+      ntfs3g htop fish custom_vim
+    ];
+
+    shellAliases = {
+      "ls" = "ls --color --group-directories-first";
+    };
+  };
 }

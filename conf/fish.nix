@@ -43,6 +43,10 @@
 
         echo -n -s 'λ ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal"
 
+        if test $IN_NIX_SHELL
+          echo -n -s ' (nix-shell)'
+        end
+
         if test $last_status -gt 0
           set_color $fish_color_cwd_root
           echo -n -s ' ● '
