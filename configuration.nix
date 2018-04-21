@@ -50,6 +50,10 @@
       enable = true;
     };
 
+    journald = {
+      extraConfig = ''Storage=volatile'';
+    };
+
     xserver = {
       enable = true;
       layout = "de";
