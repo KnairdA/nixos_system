@@ -59,7 +59,7 @@
       layout = "de";
       xkbOptions = "caps:escape";
 
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = [ "nvidiaBeta" ];
 
       displayManager.slim = {
         enable = true;
