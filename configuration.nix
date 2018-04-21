@@ -21,8 +21,11 @@
 
   sound.enable = true;
   hardware = {
-    pulseaudio.enable      = true;
     opengl.driSupport32Bit = true;
+    pulseaudio = {
+      enable       = true;
+      support32Bit = true;
+    };
   };
 
   i18n = {
