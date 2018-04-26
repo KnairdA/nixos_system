@@ -5,7 +5,7 @@
       set fish_greeting ""
     '';  
     interactiveShellInit = ''
-      eval (dircolors -c ~/.dir_colors)
+      eval (dircolors -c ${./dir_colors})
 
       set fish_color_normal         white
       set fish_color_command        magenta --bold
