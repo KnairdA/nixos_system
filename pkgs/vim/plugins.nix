@@ -11,8 +11,16 @@ in {
       sha256 = "1kwpxk68prdpzw4b7mpfwh2vq99gfymr544wzwcm072h2x89s1dv";
     };
   };
+  "vim-unimpaired" = buildVimPlugin {
+    name = "vim-unimpaired";
+    src  = fetchgit {
+      url    = "https://github.com/tpope/vim-unimpaired";
+      rev    = "bacf1543cc957d47aa70c1dc0bcf99392925b008";
+      sha256 = "0jx9xybjswnaa6v7hhfqm2nyd5v54xjd02ikw56wm7h6sfgchllx";
+    };
+  };
   "vim-color-akr" = buildVimPlugin {
     name = "vim-csexact";
-    src = ./conf/vim-color-akr;
+    src  = ./conf/vim-color-akr;
   };
 }

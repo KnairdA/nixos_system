@@ -11,12 +11,15 @@ in
       { names = [
         "ctrlp"
         "undotree"
+        "vim-unimpaired"
+        "vim-airline"
         "vim-gitgutter"
         "goyo"
         "vim-localvimrc"
         "tagbar"
         "vim-addon-nix"
         "vim-autoformat"
+        "vim-polyglot"
         "vim-csexact"
         "vim-color-akr"
       ];}

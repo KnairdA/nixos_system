@@ -39,38 +39,52 @@ nmap <backspace> :e#<CR>
 nmap f           za
 nmap F           zA
 
-autocmd InsertEnter *      :setlocal nohlsearch
-autocmd InsertLeave *      :setlocal hlsearch
+autocmd InsertEnter *   :setlocal nohlsearch
+autocmd InsertLeave *   :setlocal hlsearch
 
 autocmd FileType scheme  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType lisp    setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType racket  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType pandoc  setlocal nonumber autoread
+autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
 autocmd FileType tex     set      conceallevel=2
 
-vnoremap cc "+y
-nnoremap cc "+p
-
-nnoremap <C-left> gT
+nnoremap <C-left>  gT
 nnoremap <C-right> gt
 nnoremap <space> @q
 nnoremap J }
 nnoremap K {
 
-nmap <Left> <<
+nmap <Left>  <<
 nmap <Right> >>
-vmap <Left> <gv
+vmap <Left>  <gv
 vmap <Right> >gv
 
-nmap <Up> [e
+nmap <Up>   [e
 nmap <Down> ]e
-vmap <Up> [egv
+vmap <Up>   [egv
 vmap <Down> ]egv
 
-nnoremap <A-left> <C-W>h
+nnoremap <A-left>  <C-W>h
 nnoremap <A-right> <C-W>l
-nnoremap <A-up> <C-W>k
-nnoremap <A-down> <C-W>j
+nnoremap <A-up>    <C-W>k
+nnoremap <A-down>  <C-W>j
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled              = 1
+let g:airline#extensions#tabline#show_buffers         = 0
+let g:airline#extensions#tabline#show_tab_type        = 0
+let g:airline#extensions#tabline#formatter            = 'unique_tail_improved'
+let g:airline#extensions#tabline#buffer_idx_mode      = 0
+let g:airline#extensions#tabline#left_sep             = ''
+let g:airline#extensions#tabline#left_alt_sep         = ''
+let g:airline#extensions#tabline#right_sep            = ''
+let g:airline#extensions#tabline#right_alt_sep        = ''
+let g:airline#extensions#tabline#show_close_button    = 0
+let g:airline#extensions#tabline#show_splits          = 0
+let g:airline#extensions#tabline#show_tab_nr          = 0
+let g:airline#extensions#whitespace#mixed_indent_algo = 2
+
 
 let g:gitgutter_enabled         = 0
 let g:gitgutter_highlight_lines = 1
@@ -85,6 +99,7 @@ nnoremap <F8>  :TagbarToggle<CR>
 nnoremap <F12> :Goyo<CR>
 
 nnoremap <c-b> :CtrlPBuffer<CR>
+nnoremap <c-m> :CtrlPMixed<CR>
 nnoremap <c-t> :CtrlPTag<CR>
 nnoremap <a-t> :CtrlPBufTag<CR>
 

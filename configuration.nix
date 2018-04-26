@@ -82,7 +82,7 @@
     systemPackages = let
       custom_vim = import ./pkgs/vim/vim.nix pkgs;
     in with pkgs; [
-      ntfs3g htop fish custom_vim
+      ntfs3g htop fish git silver-searcher custom_vim
     ];
 
     shellAliases = {
