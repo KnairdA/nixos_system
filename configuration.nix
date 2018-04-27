@@ -54,6 +54,13 @@
       extraConfig = ''Storage=volatile'';
     };
 
+    openvpn.servers = {
+      KIT = {
+        config = import ./conf/vpn/kit.ovpn.nix;
+        autoStart = false;
+      };
+    };
+
     xserver = {
       enable = true;
       layout = "de";
