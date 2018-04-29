@@ -20,6 +20,7 @@ in
         "vim-addon-nix"
         "vim-autoformat"
         "vim-polyglot"
+        "vim-counterpoint"
         "vim-csexact"
         "vim-color-akr"
       ];}

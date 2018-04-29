@@ -19,6 +19,14 @@ in {
       sha256 = "0jx9xybjswnaa6v7hhfqm2nyd5v54xjd02ikw56wm7h6sfgchllx";
     };
   };
+  "vim-counterpoint" = buildVimPlugin {
+    name = "vim-counterpoint";
+    src  = fetchgit {
+      url    = "https://github.com/jpetrie/vim-counterpoint";
+      rev    = "93d8fd9d18a378ab3db39411300716129358211c";
+      sha256 = "02spr4mhj2035q45j8bf502jgpq76a518nv913zx46byfbl69lps";
+    };
+    };
   "vim-color-akr" = buildVimPlugin {
     name = "vim-csexact";
     src  = ./conf/vim-color-akr;

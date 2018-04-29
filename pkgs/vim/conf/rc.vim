@@ -45,9 +45,15 @@ autocmd InsertLeave *   :setlocal hlsearch
 autocmd FileType scheme  setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType lisp    setlocal shiftwidth=2 tabstop=2 expandtab
 autocmd FileType racket  setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftround expandtab
 autocmd FileType pandoc  setlocal nonumber autoread
 autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
 autocmd FileType tex     set      conceallevel=2
+
+" select previous line on file reload, useful when cycling file extensions
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\" zz" | endif
+nnoremap <Tab> :CounterpointNext<CR>
+nnoremap <S-Tab> :CounterpointPrevious<CR>
 
 nnoremap <C-left>  gT
 nnoremap <C-right> gt
