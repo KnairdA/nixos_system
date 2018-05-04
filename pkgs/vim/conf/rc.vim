@@ -98,11 +98,10 @@ let g:goyo_width                = 90
 let g:goyo_margin_top           = 1
 let g:goyo_margin_bottom        = 0
 
-nnoremap <F5>  :UndotreeToggle<CR>
-nnoremap <F6>  :GitGutterToggle<CR>
-nnoremap <F7>  :set cursorline!<CR>
-nnoremap <F8>  :TagbarToggle<CR>
-nnoremap <F12> :Goyo<CR>
+nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F6> :GitGutterToggle<CR>
+nnoremap <F7> :TagbarToggle<CR>
+nnoremap <F8> :Goyo<CR>
 
 nnoremap <c-b> :CtrlPBuffer<CR>
 nnoremap <c-m> :CtrlPMixed<CR>

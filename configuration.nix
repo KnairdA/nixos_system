@@ -73,7 +73,7 @@
         autoLogin = true;
         defaultUser = "common";
       };
-  
+
       desktopManager.default = "none";
     };
   };
@@ -93,7 +93,14 @@
     ];
 
     shellAliases = {
-      "ls" = "ls --color --group-directories-first";
+      "ls" = "ls --color=auto --group-directories-first";
     };
+
+    shellInit = ''
+      export LC_NUMERIC=de_DE.UTF8
+      export LC_TIME=de_DE.UTF8
+      export LC_MONETARY=de_DE.UTF8
+      export LC_MEASUREMENT=de_DE.UTF8
+    '';
   };
 }

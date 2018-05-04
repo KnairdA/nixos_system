@@ -16,6 +16,7 @@
       set fish_color_cwd            green
       set fish_color_quote          brown
       set fish_color_autosuggestion 555
+      set fish_color_redirection    white
     '';  
     promptInit = ''
       function fish_prompt
