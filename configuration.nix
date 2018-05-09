@@ -91,6 +91,16 @@
     };
   };
 
+  systemd.services.spin-down-storage = {
+    enable = true;
+    description = "Spin down storage drive by default";
+    serviceConfig = {
+      Type      = "oneshot";
+      ExecStart = "${pkgs.hdparm}/bin/hdparm -q -S 120 -y /dev/disk/by-label/storage";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
   users.extraUsers.common = {
     isNormalUser = true;
     uid          = 1000;
@@ -102,7 +112,7 @@
     systemPackages = let
       custom_vim = import ./pkgs/vim/vim.nix pkgs;
     in with pkgs; [
-      ntfs3g htop fish git silver-searcher custom_vim
+      ntfs3g psmisc htop fish git silver-searcher custom_vim
     ];
 
     shellAliases = {
