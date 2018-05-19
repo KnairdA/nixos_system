@@ -110,7 +110,7 @@
 
   environment = {
     systemPackages = let
-      custom_vim = import ./pkgs/vim/vim.nix pkgs;
+      custom_vim  = import ./pkgs/vim/vim.nix pkgs;
     in with pkgs; [
       hdparm ntfs3g psmisc htop fish git silver-searcher custom_vim
     ];

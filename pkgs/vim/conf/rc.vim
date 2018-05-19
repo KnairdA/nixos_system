@@ -17,6 +17,9 @@ set sessionoptions-=options
 
 set directory=~/.vim/swap//,.
 
+set undofile
+set undodir=~/.vim/undo
+
 set wrap
 set tabstop=4 shiftwidth=4
 set backspace=indent,eol,start
@@ -102,7 +105,7 @@ let g:goyo_margin_top           = 1
 let g:goyo_margin_bottom        = 0
 
 nnoremap <F4> :call BufferList()<CR>
-nnoremap <F6> :UndotreeToggle<CR>
+nnoremap <F5> :MundoToggle<CR>
 nnoremap <F6> :GitGutterToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 nnoremap <F8> :Goyo<CR>

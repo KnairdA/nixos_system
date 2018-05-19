@@ -3,7 +3,7 @@
     enable = true;
     shellInit = ''
       set fish_greeting ""
-    '';  
+    '';
     interactiveShellInit = ''
       eval (dircolors -c ${./dir_colors})
 
@@ -17,7 +17,7 @@
       set fish_color_quote          brown
       set fish_color_autosuggestion 555
       set fish_color_redirection    white
-    '';  
+    '';
     promptInit = ''
       function fish_prompt
         set last_status $status

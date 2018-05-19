@@ -27,6 +27,14 @@ in {
       sha256 = "02spr4mhj2035q45j8bf502jgpq76a518nv913zx46byfbl69lps";
     };
   };
+  "vim-mundo" = buildVimPlugin {
+    name = "vim-mundo";
+    src  = fetchgit {
+      url    = "https://github.com/simnalamburt/vim-mundo";
+      rev    = "v3.0.1";
+      sha256 = "052ywnd5r6ksiz1lsyqya9b94fdb0gr7krkdpc1gw1fx11qk5x2v";
+    };
+  };
   "vim-bufferlist" = buildVimPlugin {
     name = "vim-bufferlist";
     src  = fetchgit {

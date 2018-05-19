@@ -10,10 +10,10 @@ in
     pluginDictionaries = [
       { names = [
         "ctrlp"
-        "undotree"
         "goyo"
         "ack-vim"
         "tagbar"
+        "vim-mundo"
         "vim-unimpaired"
         "vim-airline"
         "vim-gitgutter"
