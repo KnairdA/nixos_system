@@ -20,14 +20,14 @@ set directory=~/.vim/swap//,.
 set wrap
 set tabstop=4 shiftwidth=4
 set backspace=indent,eol,start
-set listchars=tab:\ \ 
-set list
 set linebreak
 
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+set wildchar=<Tab> wildmenu wildmode=full
 
 let mapleader=","
 
@@ -49,6 +49,9 @@ autocmd FileType haskell setlocal shiftwidth=2 tabstop=4 softtabstop=2 shiftroun
 autocmd FileType pandoc  setlocal nonumber autoread
 autocmd FileType pandoc  let      g:airline#extensions#whitespace#checks=['indent', 'trailing', 'long']
 autocmd FileType tex     set      conceallevel=2
+
+nnoremap <C-Tab>   :bnext<CR>
+nnoremap <C-S-Tab> :bprev<CR>
 
 " select previous line on file reload, useful when cycling file extensions
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\" zz" | endif
@@ -98,7 +101,8 @@ let g:goyo_width                = 90
 let g:goyo_margin_top           = 1
 let g:goyo_margin_bottom        = 0
 
-nnoremap <F5> :UndotreeToggle<CR>
+nnoremap <F4> :call BufferList()<CR>
+nnoremap <F6> :UndotreeToggle<CR>
 nnoremap <F6> :GitGutterToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
 nnoremap <F8> :Goyo<CR>
@@ -112,6 +116,8 @@ let g:ctrlp_custom_ignore = {
 \ 'dir':  '\.git$',
 \ 'file': '\.o$\|\.d$'
 \ }
+
+let g:ackprg = 'ag --vimgrep'
 
 let g:undotree_SetFocusWhenToggle = 1
 

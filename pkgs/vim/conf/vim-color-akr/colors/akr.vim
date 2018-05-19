@@ -48,7 +48,7 @@ hi      Conditional    gui=bold       guifg=#aadb0f  guibg=NONE
 hi      MatchParen     gui=bold       guifg=NONE     guibg=NONE
 
 hi      Special        gui=NONE       guifg=#808080  guibg=NONE
-hi      SpecialKeyTab  gui=NONE       guifg=NONE     guibg=#212121
+hi      Tabs           gui=NONE       guifg=NONE     guibg=#212121
 
 hi      ColorColumn    gui=NONE       guifg=NONE     guibg=#000000
 hi      Conceal        gui=NONE       guifg=#808080  guibg=NONE
@@ -100,4 +100,4 @@ hi      prologClauseHead gui=NONE      guifg=#aadb0f  guibg=NONE
 hi      IndentGuidesEven gui=NONE      guifg=#424242  guibg=#2D2D2D
 hi      IndentGuidesOdd  gui=NONE      guifg=#424242  guibg=#2D2D2D
 
-match   SpecialKey     '^\s\+'
+match   Tabs /[\t]\+/

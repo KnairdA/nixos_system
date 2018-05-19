@@ -26,7 +26,15 @@ in {
       rev    = "93d8fd9d18a378ab3db39411300716129358211c";
       sha256 = "02spr4mhj2035q45j8bf502jgpq76a518nv913zx46byfbl69lps";
     };
+  };
+  "vim-bufferlist" = buildVimPlugin {
+    name = "vim-bufferlist";
+    src  = fetchgit {
+      url    = "https://github.com/roblillack/vim-bufferlist";
+      rev    = "bb571a6dcbf19aa72d320545d376e1d13a8853a3";
+      sha256 = "0ddp9lzl5yv6xwqrqy0dzvd9b5igf6dm5pbyrl2bm0bg586zx3gr";
     };
+  };
   "vim-color-akr" = buildVimPlugin {
     name = "vim-csexact";
     src  = ./conf/vim-color-akr;
