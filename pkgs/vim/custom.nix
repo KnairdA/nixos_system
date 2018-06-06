@@ -22,11 +22,11 @@ in
         "vim-autoformat"
         "vim-polyglot"
         "vim-counterpoint"
-        "vim-bufferlist"
+        "vim-toggle-ui-elements"
         "vim-csexact"
         "vim-color-akr"
       ];}
-    ]; 
+    ];
   };
   customRC = vimrc;
 }

@@ -7,8 +7,5 @@ let
   };
 in pkgs.lib.overrideDerivation custom_vim ( o: {
     gui              = true;
-    ftNixSupport     = true;
-    cscopeSupport    = true;
-    fontsetSupport   = true;
     multibyteSupport = true;
 } )

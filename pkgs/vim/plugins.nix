@@ -35,12 +35,12 @@ in {
       sha256 = "052ywnd5r6ksiz1lsyqya9b94fdb0gr7krkdpc1gw1fx11qk5x2v";
     };
   };
-  "vim-bufferlist" = buildVimPlugin {
-    name = "vim-bufferlist";
+  "vim-toggle-ui-elements" = buildVimPlugin {
+    name = "vim-toggle-ui-elements";
     src  = fetchgit {
-      url    = "https://github.com/roblillack/vim-bufferlist";
-      rev    = "bb571a6dcbf19aa72d320545d376e1d13a8853a3";
-      sha256 = "0ddp9lzl5yv6xwqrqy0dzvd9b5igf6dm5pbyrl2bm0bg586zx3gr";
+      url    = "https://github.com/muellan/vim-toggle-ui-elements";
+      rev    = "325f60fe8030cc2a2312d67191f214c5c39ef283";
+      sha256 = "0fl9kvp799l3nzy8lnjcb0y1hr3g1ba8n9v2mx83yaqdma0rvhi1";
     };
   };
   "vim-color-akr" = buildVimPlugin {

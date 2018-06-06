@@ -84,27 +84,23 @@ nnoremap <A-down>  <C-W>j
 
 set laststatus=2
 let g:airline#extensions#tabline#enabled              = 1
-let g:airline#extensions#tabline#show_buffers         = 0
-let g:airline#extensions#tabline#show_tab_type        = 0
+let g:airline#extensions#tabline#show_buffers         = 1
+let g:airline#extensions#tabline#show_tab_type        = 1
+let g:airline#extensions#tabline#fnamemod             = ':t'
 let g:airline#extensions#tabline#formatter            = 'unique_tail_improved'
 let g:airline#extensions#tabline#buffer_idx_mode      = 0
-let g:airline#extensions#tabline#left_sep             = ''
-let g:airline#extensions#tabline#left_alt_sep         = ''
-let g:airline#extensions#tabline#right_sep            = ''
-let g:airline#extensions#tabline#right_alt_sep        = ''
 let g:airline#extensions#tabline#show_close_button    = 0
 let g:airline#extensions#tabline#show_splits          = 0
 let g:airline#extensions#tabline#show_tab_nr          = 0
 let g:airline#extensions#whitespace#mixed_indent_algo = 2
 
-
 let g:gitgutter_enabled         = 0
 let g:gitgutter_highlight_lines = 1
+
 let g:goyo_width                = 90
 let g:goyo_margin_top           = 1
 let g:goyo_margin_bottom        = 0
 
-nnoremap <F4> :call BufferList()<CR>
 nnoremap <F5> :MundoToggle<CR>
 nnoremap <F6> :GitGutterToggle<CR>
 nnoremap <F7> :TagbarToggle<CR>
