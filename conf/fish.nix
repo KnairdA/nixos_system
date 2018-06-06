@@ -45,7 +45,11 @@
         echo -n -s 'λ ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal"
 
         if test $IN_NIX_SHELL
-          echo -n -s ' (nix-shell)'
+          if test $NIX_SHELL_NAME
+            echo -n -s ' (' $NIX_SHELL_NAME ')'
+          else
+            echo -n -s ' (nix-shell)'
+          end
         end
 
         if test $last_status -gt 0
