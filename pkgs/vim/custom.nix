@@ -23,7 +23,6 @@ in
         "vim-polyglot"
         "vim-counterpoint"
         "vim-toggle-ui-elements"
-        "vim-csexact"
         "vim-color-akr"
       ];}
     ];

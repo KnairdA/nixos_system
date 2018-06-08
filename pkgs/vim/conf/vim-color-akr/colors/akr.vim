@@ -1,103 +1,94 @@
 hi      clear
 syntax  reset
-let     background     =              "dark"
-let     g:colors_name  =              "akr"
+let     background    = "dark"
+let     g:colors_name = "akr"
 
-hi      Normal         gui=NONE       guifg=#F2F2F2  guibg=#161616
-hi      NonText        gui=NONE       guifg=#161616  guibg=#161616
-hi      LineNr         gui=NONE       guifg=#605c5a  guibg=NONE
-hi      Cursor         gui=NONE       guifg=#F2F2F2  guibg=#D80F33
-hi      CursorColumn   gui=NONE       guifg=NONE     guibg=#000000
-hi      CursorLine     gui=NONE       guifg=NONE     guibg=#212121
-hi      CursorLineNr   gui=NONE       guifg=#aadb0f  guibg=#212121
-hi      ColorColumn    gui=NONE       guifg=NONE     guibg=#aadb0f
-hi      SignColumn     gui=NONE       guifg=NONE     guibg=#aadb0f
+hi      Normal            cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=0      guibg=#161616
+hi      NonText           cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=0      guibg=#161616
+hi      LineNr            cterm=NONE    ctermfg=241   guifg=#606060  ctermbg=NONE   guibg=NONE
 
-hi      TabLine        gui=NONE       guifg=#909636  guibg=#161616
-hi      TabLineFill    gui=NONE       guifg=NONE     guibg=#262626
-hi      TabLineSel     gui=NONE       guifg=#161616  guibg=#909636
-hi      StatusLine     gui=NONE       guifg=#909636  guibg=#212121
-hi      StatusLineNC   gui=NONE       guifg=#909637  guibg=#212121
-hi      VertSplit      gui=NONE       guifg=#262626  guibg=#262626
-hi      Visual         gui=NONE       guifg=#E4E093  guibg=#8C3346
-hi      VisualNOS      gui=NONE       guifg=NONE     guibg=NONE
+hi      Cursor            cterm=NONE    ctermfg=235   guifg=#262626  ctermbg=0      guibg=#161616
+hi      CursorLine        cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=235    guibg=#262626
+hi      CursorLineNr      cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=235    guibg=#262626
+hi      CursorColumn      cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      ColorColumn       cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=2      guibg=#AADB0F
+hi      SignColumn        cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=2      guibg=#AADB0F
 
-hi      Pmenu          gui=NONE       guifg=NONE     guibg=#000000
-hi      PmenuSbar      gui=NONE       guifg=NONE     guibg=#262626
-hi      PmenuSel       gui=NONE       guifg=NONE     guibg=#333333
-hi      PmenuThumb     gui=NONE       guifg=NONE     guibg=#424242
-hi      DiffAdd        gui=NONE       guifg=NONE     guibg=#082608
-hi      DiffChange     gui=NONE       guifg=NONE     guibg=#000000
-hi      DiffDelete     gui=NONE       guifg=NONE     guibg=#260808
-hi      DiffText       gui=NONE       guifg=NONE     guibg=#333333
-hi      Search         gui=NONE       guifg=#161616  guibg=#909636
-hi      IncSearch      gui=NONE       guifg=#161616  guibg=#aadb0f
+hi      TabLine           cterm=NONE    ctermfg=10    guifg=#909636  ctermbg=0      guibg=#161616
+hi      TabLineFill       cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      TabLineSel        cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
+hi      StatusLine        cterm=NONE    ctermfg=10    guifg=#909636  ctermbg=235    guibg=#262626
+hi      StatusLineNC      cterm=NONE    ctermfg=10    guifg=#909636  ctermbg=235    guibg=#262626
+hi      VertSplit         cterm=NONE    ctermfg=235   guifg=#262626  ctermbg=235    guibg=#262626
+hi      Visual            cterm=NONE    ctermfg=3     guifg=#E4E093  ctermbg=1      guibg=#8C3346
+hi      VisualNOS         cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
 
-hi      Comment        gui=italic     guifg=#F2F2F2  guibg=NONE
-hi      Type           gui=NONE       guifg=#aadb0f  guibg=NONE
-hi      Boolean        gui=NONE       guifg=#aadb0f  guibg=NONE
-hi      String         gui=NONE       guifg=#aadb0f  guibg=NONE
-hi      Number         gui=NONE       guifg=#aadb0f  guibg=NONE
-hi      Title          gui=bold       guifg=#aadb0f  guibg=NONE
-hi      Todo           gui=standout   guifg=NONE     guibg=NONE
-hi      Constant       gui=italic     guifg=#F2F2F2  guibg=NONE
-hi      Identifier     gui=bold       guifg=#F2F2F2  guibg=#161616
-hi      Statement      gui=bold       guifg=#aadb0f  guibg=NONE
-hi      StorageClass   gui=bold       guifg=#aadb0f  guibg=NONE
-hi      Conditional    gui=bold       guifg=#aadb0f  guibg=NONE
-hi      MatchParen     gui=bold       guifg=NONE     guibg=NONE
+hi      Pmenu             cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=232    guibg=#080808
+hi      PmenuSbar         cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=235    guibg=#262626
+hi      PmenuSel          cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=241    guibg=#606060
+hi      PmenuThumb        cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=247    guibg=#9e9e9e
 
-hi      Special        gui=NONE       guifg=#808080  guibg=NONE
-hi      Tabs           gui=NONE       guifg=NONE     guibg=#212121
+hi      DiffAdd           cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
+hi      DiffChange        cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=3      guibg=#E4E093
+hi      DiffDelete        cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=1      guibg=#8C3346
+hi      DiffText          cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=4      guibg=#352F6A
 
-hi      ColorColumn    gui=NONE       guifg=NONE     guibg=#000000
-hi      Conceal        gui=NONE       guifg=#808080  guibg=NONE
-hi      Directory      gui=NONE       guifg=#F2F2F2  guibg=NONE
-hi      Error          gui=NONE       guifg=NONE     guibg=#8C3346
-hi      ErrorMsg       gui=NONE       guifg=NONE     guibg=#8C3346
-hi      FoldColumn     gui=NONE       guifg=#616161  guibg=NONE
-hi      Folded         gui=NONE       guifg=#707070  guibg=NONE
-hi      Ignore         gui=NONE       guifg=NONE     guibg=NONE
-hi      ModeMsg        gui=NONE       guifg=NONE     guibg=NONE
-hi      MoreMsg        gui=NONE       guifg=NONE     guibg=NONE
-hi      Question       gui=NONE       guifg=NONE     guibg=NONE
-hi      SignColumn     gui=NONE       guifg=#616161  guibg=NONE
-hi      Underlined     gui=NONE       guifg=NONE     guibg=NONE
-hi      WarningMsg     gui=NONE       guifg=NONE     guibg=#260808
-hi      WildMenu       gui=NONE       guifg=NONE     guibg=#525252
-hi      lCursor        gui=NONE       guifg=NONE     guibg=NONE
-hi      PreProc        gui=NONE       guifg=NONE     guibg=NONE
+hi      Search            cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
+hi      IncSearch         cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=2      guibg=#AADB0F
 
-hi      SpellBad       gui=undercurl  guifg=NONE     guibg=#260808
-hi      SpellCap       gui=undercurl  guifg=NONE     guibg=NONE
-hi      SpellLocal     gui=undercurl  guifg=NONE     guibg=#082608
-hi      SpellRare      gui=undercurl  guifg=NONE     guibg=#262626
+hi      Comment           cterm=italic  ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Type              cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Boolean           cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      String            cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Number            cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Title             cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Constant          cterm=italic  ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Identifier        cterm=bold    ctermfg=8     guifg=#F2F2F2  ctermbg=0      guibg=#161616
+hi      Statement         cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      StorageClass      cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Conditional       cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 
-hi      xmlTagName     gui=NONE       guifg=#F2F2F2  guibg=NONE
-hi      xmlEndTag      gui=NONE       guifg=#F2F2F2  guibg=NONE
-hi      xmlNamespace   gui=bold       guifg=#F2F2F2  guibg=NONE
-hi      xmlAttrib      gui=NONE       guifg=#F2F2F2  guibg=NONE
+hi      MatchParen        cterm=bold    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      Special           cterm=NONE    ctermfg=235   guifg=#262626  ctermbg=NONE   guibg=NONE
+hi      Tabs              cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=235    guibg=#262626
+hi      ColorColumn       cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      Conceal           cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Directory         cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Error             cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=1      guibg=#8C3346
+hi      ErrorMsg          cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=1      guibg=#8C3346
+hi      FoldColumn        cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Folded            cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Ignore            cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      ModeMsg           cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      MoreMsg           cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      Question          cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      SignColumn        cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      Underlined        cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      WarningMsg        cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=9      guibg=#FF0000
+hi      WildMenu          cterm=NONE    ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
+hi      lCursor           cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      PreProc           cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
 
-hi      vimwikiLink    gui=underline  guifg=#aadb0f  guibg=NONE
+hi      xmlTagName        cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      xmlEndTag         cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      xmlNamespace      cterm=bold    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
+hi      xmlAttrib         cterm=NONE    ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
 
-hi      texSection      gui=bold       guifg=#aadb0f  guibg=NONE
-hi      texMathZoneX    gui=NONE       guifg=NONE     guibg=#000000
-hi      texMathText     gui=NONE       guifg=NONE     guibg=#000000
-hi      texMathSymbol   gui=bold       guifg=NONE     guibg=#000000
-hi      texMathOper     gui=bold       guifg=#aadb0f  guibg=#000000
-hi      texMathMatcher  gui=NONE       guifg=NONE     guibg=#000000
-hi      texTypeStyle    gui=bold       guifg=NONE     guibg=#000000
-hi      texStatement    gui=bold       guifg=NONE     guibg=NONE
-hi      texGreek        gui=NONE       guifg=NONE     guibg=#000000
-hi      texBeginEnd     gui=NONE       guifg=#aadb0f  guibg=NONE
-hi      texSubscript    gui=NONE       guifg=NONE     guibg=#000000
-hi      texSuperscript  gui=NONE       guifg=NONE     guibg=#000000
-hi      texBeginEndName gui=NONE       guifg=NONE     guibg=NONE
-hi      Conceal         gui=NONE       guifg=NONE     guibg=#000000
+hi      texSection        cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      texMathZoneX      cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texMathText       cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texMathSymbol     cterm=bold    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texMathOper       cterm=bold    ctermfg=2     guifg=#AADB0F  ctermbg=8      guibg=#F2F2F2
+hi      texMathMatcher    cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texTypeStyle      cterm=bold    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texStatement      cterm=bold    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      texGreek          cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texBeginEnd       cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      texSubscript      cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texSuperscript    cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
+hi      texBeginEndName   cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
+hi      Conceal           cterm=NONE    ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
 
-hi      prologClauseHead gui=NONE      guifg=#aadb0f  guibg=NONE
+hi      prologClauseHead  cterm=NONE    ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 
-hi      IndentGuidesEven gui=NONE      guifg=#424242  guibg=#2D2D2D
-hi      IndentGuidesOdd  gui=NONE      guifg=#424242  guibg=#2D2D2D
-
-match   Tabs /[\t]\+/
+match  Tabs /[\t]\+/
