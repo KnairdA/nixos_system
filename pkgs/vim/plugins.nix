@@ -36,7 +36,7 @@ in {
     };
   };
   "vim-color-akr" = buildVimPlugin {
-    name = "vim-csexact";
+    name = "vim-color-akr";
     src  = ./conf/vim-color-akr;
   };
 }

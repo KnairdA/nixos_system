@@ -83,6 +83,7 @@ nnoremap <A-up>    <C-W>k
 nnoremap <A-down>  <C-W>j
 
 set laststatus=2
+let g:airline_theme                                   = 'akr'
 let g:airline#extensions#tabline#enabled              = 1
 let g:airline#extensions#tabline#show_buffers         = 1
 let g:airline#extensions#tabline#show_tab_type        = 1
