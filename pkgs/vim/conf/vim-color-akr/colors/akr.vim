@@ -48,8 +48,8 @@ hi      Statement         cterm=bold     gui=bold     ctermfg=2     guifg=#AADB0
 hi      StorageClass      cterm=bold     gui=bold     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 hi      Conditional       cterm=bold     gui=bold     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 
-hi      MatchParen        cterm=bold     gui=bold     ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
-hi      Special           cterm=NONE     gui=NONE     ctermfg=235   guifg=#262626  ctermbg=NONE   guibg=NONE
+hi      MatchParen        cterm=bold     gui=bold     ctermfg=0     guifg=#161616  ctermbg=2      guibg=#AADB0F
+hi      Special           cterm=NONE     gui=NONE     ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
 hi      Tabs              cterm=NONE     gui=NONE     ctermfg=NONE  guifg=NONE     ctermbg=235    guibg=#262626
 hi      ColorColumn       cterm=NONE     gui=NONE     ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
 hi      Conceal           cterm=NONE     gui=NONE     ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
