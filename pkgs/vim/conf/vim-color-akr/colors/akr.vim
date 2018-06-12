@@ -18,7 +18,7 @@ hi      TabLine           cterm=NONE     gui=NONE     ctermfg=10    guifg=#90963
 hi      TabLineFill       cterm=NONE     gui=NONE     ctermfg=NONE  guifg=NONE     ctermbg=8      guibg=#F2F2F2
 hi      TabLineSel        cterm=NONE     gui=NONE     ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
 hi      StatusLine        cterm=NONE     gui=NONE     ctermfg=10    guifg=#909636  ctermbg=235    guibg=#262626
-hi      StatusLineNC      cterm=NONE     gui=NONE     ctermfg=10    guifg=#909636  ctermbg=235    guibg=#262626
+hi      StatusLineNC      cterm=NONE     gui=NONE     ctermfg=10    guifg=#909636  ctermbg=0      guibg=#161616
 hi      VertSplit         cterm=NONE     gui=NONE     ctermfg=235   guifg=#262626  ctermbg=235    guibg=#262626
 hi      Visual            cterm=NONE     gui=NONE     ctermfg=3     guifg=#E4E093  ctermbg=1      guibg=#8C3346
 hi      VisualNOS         cterm=NONE     gui=NONE     ctermfg=NONE  guifg=NONE     ctermbg=NONE   guibg=NONE
@@ -34,13 +34,13 @@ hi      DiffDelete        cterm=NONE     gui=NONE     ctermfg=0     guifg=#16161
 hi      DiffText          cterm=NONE     gui=NONE     ctermfg=NONE  guifg=NONE     ctermbg=4      guibg=#352F6A
 
 hi      Search            cterm=NONE     gui=NONE     ctermfg=0     guifg=#161616  ctermbg=10     guibg=#909636
-hi      IncSearch         cterm=NONE     gui=NONE     ctermfg=0     guifg=#AADB0F  ctermbg=2      guibg=#161616
+hi      IncSearch         cterm=NONE     gui=NONE     ctermfg=0     guifg=#161616  ctermbg=2      guibg=#AADB0F
 
 hi      Comment           cterm=NONE     gui=italic   ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
-hi      Type              cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE    
-hi      Boolean           cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE    
-hi      String            cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE    
-hi      Number            cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE    
+hi      Type              cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Boolean           cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      String            cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
+hi      Number            cterm=NONE     gui=NONE     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 hi      Title             cterm=bold     gui=bold     ctermfg=2     guifg=#AADB0F  ctermbg=NONE   guibg=NONE
 hi      Constant          cterm=bold     gui=italic   ctermfg=8     guifg=#F2F2F2  ctermbg=NONE   guibg=NONE
 hi      Identifier        cterm=bold     gui=bold     ctermfg=8     guifg=#F2F2F2  ctermbg=0      guibg=#161616

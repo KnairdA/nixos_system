@@ -13,6 +13,7 @@ in
         "goyo"
         "ack-vim"
         "tagbar"
+        "fugitive"
         "vim-mundo"
         "vim-unimpaired"
         "vim-airline"
