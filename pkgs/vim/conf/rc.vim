@@ -104,7 +104,7 @@ let g:goyo_margin_bottom        = 0
 
 nnoremap <F5> :MundoToggle<CR>
 nnoremap <F6> :GitGutterToggle<CR>
-nnoremap <F7> :TagbarToggle<CR>
+nnoremap <F7> :SignatureToggleSigns<CR>
 nnoremap <F8> :Goyo<CR>
 
 nnoremap <c-b> :CtrlPBuffer<CR>
@@ -120,11 +120,6 @@ let g:ctrlp_custom_ignore = {
 let g:ackprg = 'ag --vimgrep'
 
 let g:undotree_SetFocusWhenToggle = 1
-
-let g:tagbar_autoclose      = 1
-let g:tagbar_autopreview    = 1
-let g:tagbar_compact        = 1
-let g:tagbar_width          = 70
 
 let g:localvimrc_sandbox    = 0
 let g:localvimrc_persistent = 2

@@ -35,6 +35,14 @@ in {
       sha256 = "0fl9kvp799l3nzy8lnjcb0y1hr3g1ba8n9v2mx83yaqdma0rvhi1";
     };
   };
+  "vim-git-commit-viewer" = buildVimPlugin {
+    name = "vim-git-commit-viewer";
+    src  = fetchgit {
+      url    = "https://github.com/junegunn/gv.vim";
+      rev    = "7ee1ca8201a0e9f95ba5dd3ec344e3ce71d61d8e";
+      sha256 = "0r0j8l0sm3xgb3hgmf0zm48mgj97nlkspg3jgv817nhwsl8pyc44";
+    };
+  };
   "vim-color-akr" = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./conf/vim-color-akr;
