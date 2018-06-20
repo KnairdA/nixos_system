@@ -31,4 +31,6 @@
       palmDetect = true;
     };
   };
+
+  powerManagement.powertop.enable = true;
 }
