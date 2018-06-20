@@ -4,33 +4,11 @@
   system.stateVersion = "18.03";
 
   imports = [
-    ./hardware-configuration.nix
+    ./host/current.nix
     ./conf/fish.nix
   ];
 
-  boot = {
-    kernelParams = [ "vga=0x31B" ];
-
-    loader.grub = {
-      enable = true;
-      version = 2;
-      device = "/dev/sdb";
-    };
-
-    initrd.luks.devices = [ {
-      name   = "root";
-      device = "/dev/disk/by-uuid/6205da24-b1b2-402c-b175-4036e678dea9";
-      preLVM        = true;
-      allowDiscards = true;
-    } ];
-  };
-
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
-  networking = {
-    hostName = "obelix";
-    firewall.enable = false;
-  };
 
   sound.enable = true;
   hardware = {
@@ -79,8 +57,6 @@
       layout = "de";
       xkbOptions = "caps:escape";
 
-      videoDrivers = [ "nvidiaBeta" ];
-
       displayManager.slim = {
         enable = true;
         autoLogin = true;
@@ -89,16 +65,6 @@
 
       desktopManager.default = "none";
     };
-  };
-
-  systemd.services.spin-down-storage = {
-    enable = true;
-    description = "Spin down storage drive by default";
-    serviceConfig = {
-      Type      = "oneshot";
-      ExecStart = "${pkgs.hdparm}/bin/hdparm -q -S 120 -y /dev/disk/by-label/storage";
-    };
-    wantedBy = [ "multi-user.target" ];
   };
 
   users.extraUsers.common = {
