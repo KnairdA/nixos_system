@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [ ./hardware/obelix.nix ];
 
@@ -16,6 +18,16 @@
       preLVM        = true;
       allowDiscards = true;
     } ];
+  };
+
+  systemd.services.spin-down-storage = {
+    enable = true;
+    description = "Spin down storage drive by default";
+    serviceConfig = {
+      Type      = "oneshot";
+      ExecStart = "${pkgs.hdparm}/bin/hdparm -q -S 120 -y /dev/disk/by-label/storage";
+    };
+    wantedBy = [ "multi-user.target" ];
   };
 
   networking = {
