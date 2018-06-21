@@ -22,13 +22,18 @@
     networkmanager.enable = true;
   };
 
-  services.xserver = {
-    videoDrivers = [ "intel" ];
+  services = {
+    upower.enable = true;
+    acpid.enable  = true;
 
-    synaptics = {
-      enable = true;
-      twoFingerScroll = true;
-      palmDetect = true;
+    xserver = {
+      videoDrivers = [ "intel" ];
+
+      synaptics = {
+        enable = true;
+        twoFingerScroll = true;
+        palmDetect = true;
+      };
     };
   };
 
