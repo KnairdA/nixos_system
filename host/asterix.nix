@@ -31,10 +31,17 @@
 
       synaptics = {
         enable = true;
-        twoFingerScroll = true;
-        palmDetect = true;
+        twoFingerScroll  = true;
+        horizontalScroll = false;
+        palmDetect       = true;
       };
     };
+  };
+
+  hardware.trackpoint = {
+    enable       = true;
+    emulateWheel = true;
+    speed        = 128;
   };
 
   powerManagement.powertop.enable = true;
