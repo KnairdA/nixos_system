@@ -11,7 +11,7 @@ in
       { names = [
         "ctrlp"
         "goyo"
-        "ack-vim"
+        "vim-far"
         "fugitive"
         "surround"
         "vim-unimpaired"

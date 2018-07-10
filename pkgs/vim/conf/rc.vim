@@ -117,8 +117,6 @@ let g:ctrlp_custom_ignore = {
 \ 'file': '\.o$\|\.d$'
 \ }
 
-let g:ackprg = 'ag --vimgrep'
-
 let g:undotree_SetFocusWhenToggle = 1
 
 let g:localvimrc_sandbox    = 0

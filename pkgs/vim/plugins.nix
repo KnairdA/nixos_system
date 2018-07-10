@@ -43,6 +43,14 @@ in {
       sha256 = "0r0j8l0sm3xgb3hgmf0zm48mgj97nlkspg3jgv817nhwsl8pyc44";
     };
   };
+  "vim-far" = buildVimPlugin {
+    name = "vim-far";
+    src = fetchgit {
+      url    = "https://github.com/brooth/far.vim.git";
+      rev    = "5f8016e1df98b1f806e6347728dc012ae59579ab";
+      sha256 = "15pcsd039srfvrj2a6f3ns8zh13vrbdx93pcyxzxd8i0vidshkmb";
+    };
+  };
   "vim-color-akr" = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./conf/vim-color-akr;
