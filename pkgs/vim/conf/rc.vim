@@ -42,6 +42,9 @@ nmap <backspace> :e#<CR>
 nmap f           za
 nmap F           zA
 
+" disable to override default on neovim
+set noautoread
+
 autocmd InsertEnter *   :setlocal nohlsearch
 autocmd InsertLeave *   :setlocal hlsearch
 
