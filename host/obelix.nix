@@ -4,7 +4,7 @@
   imports = [ ./hardware/obelix.nix ];
 
   boot = {
-    kernelParams = [ "vga=0x31B" ];
+    kernelParams = [ "vga=0x034D" ];
 
     loader.grub = {
       enable = true;
