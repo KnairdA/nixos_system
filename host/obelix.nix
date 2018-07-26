@@ -4,12 +4,13 @@
   imports = [ ./hardware/obelix.nix ];
 
   boot = {
-    kernelParams = [ "vga=0x034D" ];
-
     loader.grub = {
-      enable = true;
+      enable  = true;
       version = 2;
-      device = "/dev/sdb";
+      device  = "/dev/sdb";
+      extraConfig = ''
+        set gfxpayload=1920x1200x32
+      '';
     };
 
     initrd.luks.devices = [ {
@@ -22,7 +23,7 @@
 
   systemd.services.spin-down-storage = {
     enable = true;
-    description = "Spin down storage drive by default";
+    description = "Spin down storage drive";
     serviceConfig = {
       Type      = "oneshot";
       ExecStart = "${pkgs.hdparm}/bin/hdparm -q -S 120 -y /dev/disk/by-label/storage";
