@@ -26,6 +26,7 @@ in
         "vim-polyglot"
         "vim-counterpoint"
         "vim-toggle-ui-elements"
+        "vim-wordmotion"
         "vim-color-akr"
       ];}
     ];

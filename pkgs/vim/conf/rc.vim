@@ -124,3 +124,5 @@ let g:undotree_SetFocusWhenToggle = 1
 
 let g:localvimrc_sandbox    = 0
 let g:localvimrc_persistent = 2
+
+let g:wordmotion_prefix = '<Leader>'
