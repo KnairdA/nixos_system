@@ -67,6 +67,15 @@ in {
     };
   };
 
+  "vim-gina" = buildVimPlugin {
+    name = "vim-gina";
+    src = fetchgit {
+      url    = "https://github.com/lambdalisue/gina.vim.git";
+      rev    = "v0.3.2";
+      sha256 = "06m9cb04qsk49jri3cyw1gr3q71r048pzym10zlqgzsl1jsnvalv";
+    };
+  };
+
   "vim-color-akr" = buildVimPlugin {
     name = "vim-color-akr";
     src  = ./conf/vim-color-akr;

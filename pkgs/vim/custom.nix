@@ -9,25 +9,32 @@ in
     knownPlugins = pkgs.vimPlugins // plugins;
     pluginDictionaries = [
       { names = [
-        "ctrlp"
+      # UI enhancements
+        "vim-airline"
         "goyo"
-        "vim-far"
-        "fugitive"
+        "vim-toggle-ui-elements"
+      # load project specific config
+        "vim-localvimrc"
+      # colors, syntax highlighting
+        "vim-color-akr"
+        "vim-polyglot"
+        "vim-addon-nix"
+      # file, buffer management
+        "ctrlp"
+        "vim-counterpoint"
+        "vim-signature"
+      # undo history tree
+        "vim-mundo"
+      # editing enhancements
+        "vim-wordmotion"
+        "vim-autoformat"
         "surround"
         "vim-unimpaired"
-        "vim-mundo"
-        "vim-airline"
+        "vim-far"
+      # git integration
+        "fugitive"
         "vim-gitgutter"
-        "vim-git-commit-viewer"
-        "vim-signature"
-        "vim-localvimrc"
-        "vim-addon-nix"
-        "vim-autoformat"
-        "vim-polyglot"
-        "vim-counterpoint"
-        "vim-toggle-ui-elements"
-        "vim-wordmotion"
-        "vim-color-akr"
+        "vim-gina"
       ];}
     ];
   };
