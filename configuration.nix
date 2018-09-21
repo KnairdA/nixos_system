@@ -5,19 +5,9 @@
 
   imports = [
     ./host/current.nix
+    ./conf/common.nix
     ./conf/fish.nix
   ];
-
-  fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
-
-  sound.enable = true;
-  hardware = {
-    opengl.driSupport32Bit = true;
-    pulseaudio = {
-      enable       = true;
-      support32Bit = true;
-    };
-  };
 
   i18n = {
     consoleKeyMap = "de";
@@ -36,49 +26,16 @@
     };
   };
 
-  services = {
-    openssh = {
-      enable = true;
-    };
-
-    journald = {
-      extraConfig = ''Storage=volatile'';
-    };
-
-    openvpn.servers = {
-      KIT = {
-        config = import ./conf/vpn/kit.ovpn.nix;
-        autoStart = false;
-      };
-    };
-
-    xserver = {
-      enable = true;
-      layout = "de";
-      xkbOptions = "caps:escape";
-
-      displayManager.slim = {
-        enable = true;
-        autoLogin = true;
-        defaultUser = "common";
-      };
-
-      desktopManager.default = "none";
-    };
-  };
-
-  users.extraUsers.common = {
-    isNormalUser = true;
-    uid          = 1000;
-    extraGroups  = [ "wheel" ];
-    shell        = pkgs.fish;
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "no";
   };
 
   environment = {
     systemPackages = let
       custom_vim  = import ./pkgs/vim/vim.nix pkgs;
     in with pkgs; [
-      hdparm ntfs3g psmisc htop fish git silver-searcher custom_vim
+      psmisc htop fish git silver-searcher custom_vim
     ];
 
     shellAliases = {

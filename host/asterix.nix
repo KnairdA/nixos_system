@@ -1,5 +1,8 @@
 {
-  imports = [ ./hardware/asterix.nix ];
+  imports = [
+    ./hardware/asterix.nix
+    ./role/desktop.nix
+  ];
 
   boot = {
     loader.grub = {

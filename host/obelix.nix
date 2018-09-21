@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ./hardware/obelix.nix ];
+  imports = [
+    ./hardware/obelix.nix
+    ./role/desktop.nix
+  ];
 
   boot = {
     loader.grub = {
