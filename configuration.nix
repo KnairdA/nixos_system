@@ -28,6 +28,7 @@
 
   services.openssh = {
     enable = true;
+    passwordAuthentication = false;
     permitRootLogin = "no";
   };
 
@@ -43,6 +44,7 @@
     };
 
     shellInit = ''
+      export TERM=xterm
       export LC_NUMERIC=de_DE.UTF8
       export LC_TIME=de_DE.UTF8
       export LC_MONETARY=de_DE.UTF8
