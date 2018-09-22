@@ -18,13 +18,14 @@
   };
 
   services = {
-    gogs = {
+    gitea = {
       enable = true;
       database.type = "sqlite3";
 
       appName = "~/projects";
       domain  = "code.kummerlaender.eu";
-      rootUrl = "http://code.kummerlaender.eu/";
+      rootUrl = "https://code.kummerlaender.eu/";
+      httpPort = 3000;
 
       extraConfig = ''
       [service]
