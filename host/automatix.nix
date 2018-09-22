@@ -28,9 +28,18 @@
       httpPort = 3000;
 
       extraConfig = ''
-      [service]
-      DISABLE_REGISTRATION = true
-      SHOW_REGISTRATION_BUTTON = false
+        [server]
+        LANDING_PAGE = "explore"
+        [service]
+        DISABLE_REGISTRATION = true
+        SHOW_REGISTRATION_BUTTON = false
+        [api]
+        ENABLE_SWAGGER_ENDPOINT = false
+        [picture]
+        DISABLE_GRAVATAR = true
+        [other]
+        SHOW_FOOTER_VERSION = false
+        SHOW_FOOTER_TEMPLATE_LOAD_TIME = false
       '';
     };
 
