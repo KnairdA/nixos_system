@@ -6,6 +6,6 @@ let
     vimrcConfig = (import ./custom.nix { pkgs = pkgs; });
   };
 in pkgs.lib.overrideDerivation custom_vim ( o: {
-    gui              = true;
+    gui              = false;
     multibyteSupport = true;
 } )

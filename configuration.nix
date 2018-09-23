@@ -5,8 +5,9 @@
 
   imports = [
     ./host/current.nix
-    ./conf/common.nix
-    ./conf/fish.nix
+    ./host/software/vim.nix
+    ./host/software/fish.nix
+    ./user/common.nix
   ];
 
   i18n = {
@@ -33,10 +34,8 @@
   };
 
   environment = {
-    systemPackages = let
-      custom_vim  = import ./pkgs/vim/vim.nix pkgs;
-    in with pkgs; [
-      psmisc htop fish git silver-searcher custom_vim
+    systemPackages = with pkgs; [
+      psmisc htop git silver-searcher
     ];
 
     shellAliases = {
@@ -44,7 +43,6 @@
     };
 
     shellInit = ''
-      export TERM=xterm
       export LC_NUMERIC=de_DE.UTF8
       export LC_TIME=de_DE.UTF8
       export LC_MONETARY=de_DE.UTF8

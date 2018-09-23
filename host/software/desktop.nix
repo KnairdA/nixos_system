@@ -1,6 +1,10 @@
 { pkgs, ... }:
 
 {
+  imports = [
+    ./kit.vpn.nix
+  ];
+
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
   sound.enable = true;
@@ -15,13 +19,6 @@
   services = {
     journald = {
       extraConfig = ''Storage=volatile'';
-    };
-
-    openvpn.servers = {
-      KIT = {
-        config = import ./conf/vpn/kit.ovpn.nix;
-        autoStart = false;
-      };
     };
 
     xserver = {

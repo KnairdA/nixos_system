@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware/obelix.nix
-    ./role/desktop.nix
+    ./software/desktop.nix
   ];
 
   boot = {

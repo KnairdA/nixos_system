@@ -78,7 +78,7 @@ in {
 
   "vim-color-akr" = buildVimPlugin {
     name = "vim-color-akr";
-    src  = ./conf/vim-color-akr;
+    src  = ./asset/vim-color-akr;
   };
 
 }

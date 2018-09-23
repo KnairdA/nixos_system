@@ -1,7 +1,7 @@
 { pkgs }:
 
 let
-  vimrc   = builtins.readFile ./conf/rc.vim;
+  vimrc   = builtins.readFile ./asset/rc.vim;
   plugins = pkgs.callPackage ./plugins.nix {};
 in
 {

@@ -1,11 +1,15 @@
+{ pkgs, ... }:
+
 {
   programs.fish = {
     enable = true;
+
     shellInit = ''
       set fish_greeting ""
     '';
+
     interactiveShellInit = ''
-      eval (dircolors -c ${./dir_colors})
+      eval (dircolors -c ${./asset/dir_colors})
 
       set fish_color_normal         white
       set fish_color_command        magenta --bold
@@ -18,6 +22,7 @@
       set fish_color_autosuggestion 555
       set fish_color_redirection    white
     '';
+
     promptInit = ''
       function fish_prompt
         set last_status $status
