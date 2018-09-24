@@ -4,6 +4,8 @@
   imports = [
     ./hardware/automatix.nix
     ./software/code.kummerlaender.eu.nix
+    ./software/pkgs.kummerlaender.eu.nix
+    ./software/blog.kummerlaender.eu.nix
   ];
 
   boot.loader.grub = {
