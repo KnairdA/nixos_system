@@ -1,8 +1,6 @@
 { pkgs, ... }:
 
 let
-  mypkgs = import <mypkgs> { };
-
   content = pkgs.stdenv.mkDerivation {
     name = "blog.kummerlaender.eu";
 
@@ -15,17 +13,19 @@ let
 
     LANG = "en_US.UTF-8";
 
-    buildInputs = [
+    buildInputs = let
+      mypkgs = import (fetchTarball "https://pkgs.kummerlaender.eu/nixexprs.tar.gz") { };
+    in [
       pkgs.pandoc
       pkgs.highlight
-      mypkgs.KaTeX
-      mypkgs.makeweb
+      mypkgs.katex-wrapper
+      mypkgs.make-xslt
     ];
 
     patches = [ ./asset/blog.kummerlaender.eu-change-domain.patch ];
 
     installPhase = ''
-      makeweb
+      make-xslt
       mkdir $out
       cp -Lr target/99_result/* $out
     '';
