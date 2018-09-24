@@ -6,6 +6,8 @@
     ./software/code.kummerlaender.eu.nix
     ./software/pkgs.kummerlaender.eu.nix
     ./software/blog.kummerlaender.eu.nix
+    ./software/tree.kummerlaender.eu.nix
+    ./software/mx.kummerlaender.eu.nix
   ];
 
   boot.loader.grub = {
