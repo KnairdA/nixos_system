@@ -3,8 +3,8 @@
 let
   content = pkgs.fetchgit {
     url    = "gitea@localhost:web/tree_content.git";
-    rev    = "ed052cbb514b1d6bf7cdb34c1f23bca5690bbef3";
-    sha256 = "1hzhgmrg5l8bpr2gqhf9ky4hia99lvjk2rrbj50n9a64s850bdcb";
+    rev    = "1544db46357bc6b03ac82cc47e6f99ec09b82b62";
+    sha256 = "05lw3qcqm6jccbp15fcy7nd83pzv9zidpvafr2f7xvr2czi7z2iy";
   };
 
   result = pkgs.stdenv.mkDerivation {
@@ -13,8 +13,8 @@ let
     src = pkgs.fetchFromGitHub {
       owner  = "KnairdA";
       repo   = "tree.kummerlaender.eu";
-      rev    = "6af4f31f1aa4546c9d09cbfa6f5840b73986a5c6";
-      sha256 = "01f0n9rh8bnwnqyvh16rs6cn3niq8d7cp9g497j8cvm3654v4baf";
+      rev    = "95f100c7ac9fba6116f0e268950b83b706325bf2";
+      sha256 = "0llffkjdz3x0yp3nvb1fa6041rj696xnkifvy6kalsbrxy8mbfn5";
     };
 
     LANG = "en_US.UTF-8";
