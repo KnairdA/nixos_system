@@ -5,7 +5,6 @@
 
   imports = [
     ./host/current.nix
-    ./host/software/vim.nix
     ./host/software/fish.nix
     ./user/common.nix
   ];
@@ -34,8 +33,14 @@
   };
 
   environment = {
-    systemPackages = with pkgs; [
-      psmisc htop git silver-searcher
+    systemPackages = let
+      mypkgs = import (fetchTarball "https://pkgs.kummerlaender.eu/nixexprs.tar.gz") { };
+    in [
+      pkgs.psmisc
+      pkgs.htop
+      pkgs.git
+      pkgs.silver-searcher
+      mypkgs.custom-vim
     ];
 
     shellAliases = {
