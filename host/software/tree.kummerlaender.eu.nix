@@ -3,8 +3,8 @@
 let
   content = pkgs.fetchgit {
     url    = "gitea@localhost:web/tree_content.git";
-    rev    = "1544db46357bc6b03ac82cc47e6f99ec09b82b62";
-    sha256 = "05lw3qcqm6jccbp15fcy7nd83pzv9zidpvafr2f7xvr2czi7z2iy";
+    rev    =  "bc3ac4828b8980dd83963f2cf2c4df8f10a8f96a";
+    sha256 = "0f7mgm8z714k34dc7v7iv5i6dmgmk4dyawbyx7y7p8cbjcg1bdw4";
   };
 
   result = pkgs.stdenv.mkDerivation {

@@ -7,8 +7,9 @@ let
     src = pkgs.fetchFromGitHub {
       owner = "KnairdA";
       repo  = "blog.kummerlaender.eu";
-      rev   = "218123bcc40a82ec10bf4f1de372f72557aa0064";
-      sha256 = "1yhpvc0z7v5crvmyszzp9jcf23fd0pri6mrvn3k3bbycndmbs4gx";
+      fetchSubmodules = true;
+      rev    = "92beb2254a441d43bb66ab89a179853ccbe6bceb";
+      sha256 = "1mbxjkh8wxsvqb3yc6cirr3rady756vvys3v5l8k2rxkkl90wg1m";
     };
 
     LANG = "en_US.UTF-8";
