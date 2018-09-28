@@ -3,11 +3,10 @@
 {
   imports = [
     ./hardware/automatix.nix
-    ./software/code.kummerlaender.eu.nix
-    ./software/pkgs.kummerlaender.eu.nix
-    ./software/blog.kummerlaender.eu.nix
-    ./software/tree.kummerlaender.eu.nix
-    ./software/mx.kummerlaender.eu.nix
+
+    ./software/server/git.nix
+    ./software/server/mail.nix
+    ./software/server/website.nix
   ];
 
   boot.loader.grub = {

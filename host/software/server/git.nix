@@ -30,13 +30,9 @@
     };
 
     nginx.virtualHosts."code.kummerlaender.eu" = {
-      addSSL = true;
+      addSSL     = true;
       enableACME = true;
-      locations = {
-        "/" = {
-          proxyPass = "http://localhost:3000/";
-        };
-      };
+      locations."/".proxyPass = "http://localhost:3000/";
     };
   };
 }
