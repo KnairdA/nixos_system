@@ -1,7 +1,7 @@
 {
   imports = [
     ./hardware/asterix.nix
-    ./software/desktop.nix
+    ./software/desktop
   ];
 
   boot = {

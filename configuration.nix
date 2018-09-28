@@ -4,8 +4,8 @@
   system.stateVersion = "18.03";
 
   imports = [
+    ./fish.nix
     ./host/current.nix
-    ./host/software/fish.nix
     ./user/common.nix
   ];
 
