@@ -19,8 +19,11 @@
       "/".root = "/home/public/${sub}/result";
     };
   in {
-    "blog.kummerlaender.eu" = website "blog";
-    "tree.kummerlaender.eu" = website "tree";
+    "kummerlaender.eu"        = website "overview";
+    "blog.kummerlaender.eu"   = website "blog";
+    "tree.kummerlaender.eu"   = website "tree";
+    "static.kummerlaender.eu" = website "static";
+
     "pkgs.kummerlaender.eu" = default {
       "/".root                     = "/home/public/pkgs/result";
       "/nixexprs.tar.gz".proxyPass = "http://localhost:3000/adrian/pkgs/archive/master.tar.gz";
