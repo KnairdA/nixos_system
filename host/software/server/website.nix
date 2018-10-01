@@ -23,6 +23,7 @@
     proxy = target: {
       proxyPass  = target;
       extraConfig = ''
+        expires off;
         proxy_set_header Host code.kummerlaender.eu;
       '';
     };
@@ -30,7 +31,11 @@
     "kummerlaender.eu"        = website "overview";
     "blog.kummerlaender.eu"   = website "blog";
     "tree.kummerlaender.eu"   = website "tree";
-    "static.kummerlaender.eu" = website "static";
+    "static.kummerlaender.eu" = website "static" // {
+      extraConfig = ''
+        add_header Access-Control-Allow-Origin *;
+      '';
+    };
 
     "pkgs.kummerlaender.eu" = default {
       "/".root = "/home/public/pkgs/result";
