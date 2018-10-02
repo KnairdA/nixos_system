@@ -19,7 +19,9 @@
     hostName = "automatix";
 
     firewall = {
-      allowedTCPPorts = [ 22 80 443 ];
+      enable = true;
+    # open Nginx ports, other services open their own ports
+      allowedTCPPorts = [ 80 443 ];
     };
   };
 
@@ -31,6 +33,12 @@
       recommendedOptimisation  = true;
       recommendedProxySettings = true;
       recommendedTlsSettings   = true;
+    };
+
+    syncthing = {
+      enable = true;
+      group  = "users";
+      openDefaultPorts = true;
     };
   };
 }
