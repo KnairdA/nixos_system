@@ -8,8 +8,12 @@
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
   sound.enable = true;
+
   hardware = {
-    opengl.driSupport32Bit = true;
+    opengl= {
+      driSupport32Bit = true;
+    };
+
     pulseaudio = {
       enable       = true;
       support32Bit = true;
@@ -37,6 +41,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    hdparm ntfs3g 
+    ntfs3g
   ];
 }

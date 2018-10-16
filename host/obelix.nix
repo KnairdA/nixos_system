@@ -24,16 +24,6 @@
     } ];
   };
 
-  systemd.services.spin-down-storage = {
-    enable = true;
-    description = "Spin down storage drive";
-    serviceConfig = {
-      Type      = "oneshot";
-      ExecStart = "${pkgs.hdparm}/bin/hdparm -q -S 120 -y /dev/disk/by-label/storage";
-    };
-    wantedBy = [ "multi-user.target" ];
-  };
-
   networking = {
     hostName = "obelix";
     firewall.enable = false;
