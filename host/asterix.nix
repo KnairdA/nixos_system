@@ -25,6 +25,8 @@
     networkmanager.enable = true;
   };
 
+  users.extraUsers.common.extraGroups  = [ "networkmanager" ];
+
   services = {
     upower.enable = true;
     acpid.enable  = true;
