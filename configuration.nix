@@ -40,11 +40,17 @@
       pkgs.htop
       pkgs.git
       pkgs.silver-searcher
+      pkgs.renameutils
       mypkgs.custom-vim
     ];
 
+    variables = {
+      EDITOR = "vim";
+    };
+
     shellAliases = {
-      "ls" = "ls --color=auto --group-directories-first";
+      "ls"  = "ls --color=auto --group-directories-first";
+      "qmv" = "qmv --format=destination-only";
     };
 
     shellInit = ''
