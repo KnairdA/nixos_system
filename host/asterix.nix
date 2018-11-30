@@ -1,3 +1,5 @@
+{ pkgs, ... }:
+
 {
   imports = [
     ./hardware/asterix.nix
@@ -40,6 +42,16 @@
         horizontalScroll = false;
         palmDetect       = true;
       };
+    };
+
+    printing = {
+      enable = true;
+      drivers = [ pkgs.brgenml1cupswrapper ];
+    };
+
+    avahi = {
+      enable = true;
+      nssmdns = true;
     };
   };
 
