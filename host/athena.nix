@@ -40,6 +40,7 @@
         twoFingerScroll  = true;
         horizontalScroll = false;
         palmDetect       = true;
+        minSpeed         = "1.5";
       };
     };
   };
@@ -47,8 +48,17 @@
   hardware.trackpoint = {
     enable       = true;
     emulateWheel = true;
-    speed        = 128;
+    speed        = 250;
   };
 
+  services.tlp.enable = true;
+
   powerManagement.powertop.enable = true;
+
+  i18n = {
+    consoleFont = "ter-132n";
+    consolePackages = [ pkgs.terminus_font ];
+  };
+
+  boot.earlyVconsoleSetup = true;
 }
