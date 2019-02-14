@@ -26,7 +26,7 @@
     networkmanager.enable = true;
   };
 
-  users.extraUsers.common.extraGroups  = [ "networkmanager" ];
+  users.extraUsers.common.extraGroups  = [ "networkmanager" "libvirtd" ];
 
   services = {
     upower.enable = true;
@@ -44,6 +44,8 @@
       };
     };
   };
+
+  virtualisation.libvirtd.enable = true;
 
   hardware.trackpoint = {
     enable       = true;
