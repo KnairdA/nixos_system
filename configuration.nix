@@ -39,14 +39,16 @@
 
   environment = {
     systemPackages = let
-      mypkgs = import (fetchTarball "https://pkgs.kummerlaender.eu/nixexprs.tar.gz") { };
+    # use latest nvim
+      nixpkgs-unstable = import <nixpkgs-unstable> { };
+      mypkgs = import <mypkgs> { pkgs = nixpkgs-unstable; };
     in [
       pkgs.psmisc
       pkgs.htop
       pkgs.git
       pkgs.silver-searcher
       pkgs.renameutils
-      mypkgs.custom-vim
+      mypkgs.custom-neovim
     ];
 
     variables = {
