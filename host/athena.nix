@@ -53,11 +53,13 @@
     speed        = 250;
   };
 
+  hardware.bluetooth.enable = true;
+
   services.tlp = {
     enable = true;
     extraConfig = ''
      RESTORE_DEVICE_STATE_ON_STARTUP=1
-     DEVICES_TO_DISABLE_ON_STARTUP="bluetooth wwan"
+     DEVICES_TO_DISABLE_ON_STARTUP="wwan"
     '';
   };
 
