@@ -30,6 +30,7 @@
   in {
     "kummerlaender.eu"        = website "overview";
     "blog.kummerlaender.eu"   = website "blog";
+    "blip.kummerlaender.eu"   = website "blip";
     "tree.kummerlaender.eu"   = website "tree";
     "static.kummerlaender.eu" = website "static" // {
       extraConfig = ''
