@@ -18,6 +18,11 @@
 
     website = sub: default {
       "/".root = "/home/public/${sub}/result";
+      "/".extraConfig = ''
+        location ~* \.(?:html?|xml)$ {
+          expires -1;
+        }
+      '';
     };
 
     proxy = target: {
