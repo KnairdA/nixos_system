@@ -7,6 +7,7 @@
     ./software/server/git.nix
     ./software/server/mail.nix
     ./software/server/website.nix
+    ./software/server/wireguard.nix
   ];
 
   boot.loader.grub = {
