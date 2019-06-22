@@ -30,4 +30,22 @@
   };
 
   services.xserver.videoDrivers = [ "nvidiaBeta" ];
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "10.100.0.2/24" ];
+
+      privateKeyFile = "/etc/wireguard/private";
+
+      peers = [
+        { # automatix
+          publicKey  = "B0tkjq+5SfECKx1gWEP5JVWOIaRWL2JNE7iSpMmN4F0=";
+          allowedIPs = [ "10.100.0.0/24" ];
+          endpoint   = "kummerlaender.eu:54321";
+
+          persistentKeepalive = 10;
+        }
+      ];
+    };
+  };
 }
