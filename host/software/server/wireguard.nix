@@ -20,6 +20,10 @@
           publicKey = "Tkoaewh9HB5rIuJVrFgClRF4x7prOtIlSJjiTYCpxis=";
           allowedIPs = [ "10.100.0.3/32" ];
         }
+        { # athena
+          publicKey = "t4SzRV/olVdzAKauJOwFau3I0fTISUvbOAaKGZd6ezU=";
+          allowedIPs = [ "10.100.0.4/32" ];
+        }
       ];
     };
   };
