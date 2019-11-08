@@ -61,6 +61,13 @@
         minSpeed         = "1.5";
       };
     };
+
+    printing.enable = true;
+
+    avahi = {
+      enable  = true;
+      nssmdns = true;
+    };
   };
 
   virtualisation.libvirtd.enable = true;
