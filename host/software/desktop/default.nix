@@ -43,4 +43,8 @@
   environment.systemPackages = with pkgs; [
     ntfs3g
   ];
+
+  boot.kernel.sysctl = {
+    "kernel.perf_event_paranoid" = -1; # allow user to perform perf analysis
+  };
 }
