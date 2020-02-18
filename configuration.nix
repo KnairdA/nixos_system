@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
-{
+let
+  mypkgs = import <mypkgs> { };
+
+in {
   system.stateVersion = "18.09";
 
   imports = [
@@ -39,11 +42,7 @@
   };
 
   environment = {
-    systemPackages = let
-    # use latest nvim
-      nixpkgs-unstable = import <nixpkgs-unstable> { };
-      mypkgs = import <mypkgs> { pkgs = nixpkgs-unstable; };
-    in [
+    systemPackages = [
       pkgs.psmisc
       pkgs.htop
       pkgs.git
