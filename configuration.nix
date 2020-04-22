@@ -12,14 +12,17 @@ in {
     ./user/common.nix
   ];
 
+  console.keyMap = "de";
+
   i18n = {
-    consoleKeyMap = "de";
     defaultLocale = "en_US.UTF-8";
   };
 
   time.timeZone = "Europe/Berlin";
 
   nixpkgs.config.allowUnfree = true;
+
+  nix.allowedUsers = [ "common" ];
 
   networking.nameservers = [
     "1.1.1.1"
