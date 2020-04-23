@@ -26,6 +26,14 @@
           publicKey = "t4SzRV/olVdzAKauJOwFau3I0fTISUvbOAaKGZd6ezU=";
           allowedIPs = [ "10.100.0.4" ];
         }
+        { # schreibfix
+          publicKey = "WBvUFZ4mgTi6O8BB6L4snRKMWHcy5QiROdEFCwYbbUo=";
+          allowedIPs = [ "10.100.0.5" ];
+        }
+        { # mobiltelefon
+          publicKey = "jUtbAF3TZDEFXlL+YTV3g26wP0IWGbpiCFGXjxo5TXE=";
+          allowedIPs = [ "10.100.0.6" ];
+        }
       ];
     };
   };
