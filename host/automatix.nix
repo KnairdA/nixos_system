@@ -53,4 +53,9 @@
       openDefaultPorts = true;
     };
   };
+
+  security.acme = {
+    acceptTerms = true;
+    email = "key@kummerlaender.eu";
+  };
 }
