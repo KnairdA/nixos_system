@@ -12,12 +12,13 @@
       efi.canTouchEfiVariables = true;
     };
 
-    initrd.luks.devices = [ {
-      name   = "encrypted";
-      device = "/dev/nvme0n1p2";
-      preLVM        = true;
-      allowDiscards = true;
-    } ];
+    initrd.luks.devices = {
+      encrypted = {
+        device = "/dev/nvme0n1p2";
+        preLVM        = true;
+        allowDiscards = true;
+      };
+    };
   };
 
   networking = {
@@ -92,10 +93,9 @@
 
   powerManagement.powertop.enable = true;
 
-  i18n = {
-    consoleFont = "ter-132n";
-    consolePackages = [ pkgs.terminus_font ];
+  console = {
+    earlySetup = true;
+    font = "ter-132n";
+    packages = [ pkgs.terminus_font ];
   };
-
-  boot.earlyVconsoleSetup = true;
 }
