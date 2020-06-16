@@ -52,7 +52,7 @@
     acpid.enable  = true;
 
     xserver = {
-      videoDrivers = [ "intel" ];
+      videoDrivers = [ "modesetting" ];
 
       synaptics = {
         enable = true;
