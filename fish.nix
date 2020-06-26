@@ -25,6 +25,11 @@
 
     promptInit = ''
       function fish_prompt
+        if test $TERM = "dumb"
+          echo "\$ "
+          return 0
+        end
+
         set last_status $status
 
         if not set -q __fish_prompt_normal
