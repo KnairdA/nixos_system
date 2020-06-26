@@ -16,6 +16,8 @@
     device  = "/dev/sda";
   };
 
+  nix.allowedUsers = [ "public" ];
+
   networking = {
     hostName = "automatix";
 
