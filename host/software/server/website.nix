@@ -7,6 +7,8 @@
     shell        = pkgs.fish;
   };
 
+  systemd.services.nginx.serviceConfig.ProtectHome = false;
+
   # `public` generates websites using their custom derivations via `nix-build`
   services.nginx.virtualHosts = let
 
@@ -49,5 +51,7 @@
       "/nixexprs.tar.xz"  = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.xz";
       "/nixexprs.tar.bz2" = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.bz2";
     };
+
+    "literatelb.org"      = website "literatelb";
   };
 }
