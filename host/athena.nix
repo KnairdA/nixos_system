@@ -98,4 +98,6 @@
     font = "ter-132n";
     packages = [ pkgs.terminus_font ];
   };
+
+  system.stateVersion = "18.09";
 }

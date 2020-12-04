@@ -52,4 +52,6 @@
   };
 
   powerManagement.powertop.enable = true;
+
+  system.stateVersion = "18.09";
 }

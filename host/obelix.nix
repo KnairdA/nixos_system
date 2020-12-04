@@ -49,4 +49,6 @@
       ];
     };
   };
+
+  system.stateVersion = "18.09";
 }

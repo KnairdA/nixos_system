@@ -30,13 +30,16 @@
       layout = "de";
       xkbOptions = "caps:escape";
 
-      displayManager.lightdm = {
-        enable = true;
+      displayManager = {
         autoLogin = {
           enable = true;
           user   = "common";
         };
+
+        lightdm.enable = true;
       };
+
+      desktopManager.xterm.enable = true;
     };
   };
 

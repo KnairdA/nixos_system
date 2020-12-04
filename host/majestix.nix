@@ -7,17 +7,18 @@
   ];
 
   boot = {
-    loader.grub = {
-      enable = true;
-      version = 2;
-      device = "/dev/sda";
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
     };
 
-    initrd.luks.devices = [ {
-      name   = "encrypted";
-      device = "/dev/sda2";
-      preLVM = true;
-    } ];
+    initrd.luks.devices = {
+      encrypted = {
+        device = "/dev/nvme0n1p2";
+        preLVM        = true;
+        allowDiscards = true;
+      };
+    };
   };
 
   networking = {
@@ -32,21 +33,9 @@
     acpid.enable  = true;
 
     xserver = {
-      videoDrivers = [ "intel" ];
-    };
-
-    printing = {
-      enable = true;
-      drivers = [ pkgs.brgenml1cupswrapper ];
-    };
-
-    avahi = {
-      enable = true;
-      nssmdns = true;
+      videoDrivers = [ "nvidia" ];
     };
   };
-
-  hardware.opengl.extraPackages = [ pkgs.intel-ocl ];
 
   networking.wireguard.interfaces = {
     wg0 = {
@@ -64,4 +53,8 @@
       ];
     };
   };
+
+  nix.maxJobs = 32;
+
+  system.stateVersion = "20.09";
 }

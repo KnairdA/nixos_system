@@ -4,8 +4,6 @@ let
   mypkgs = import <mypkgs> { };
 
 in {
-  system.stateVersion = "18.09";
-
   imports = [
     ./fish.nix
     ./host/current.nix

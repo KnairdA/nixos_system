@@ -60,4 +60,6 @@
     acceptTerms = true;
     email = "key@kummerlaender.eu";
   };
+
+  system.stateVersion = "18.09";
 }
