@@ -47,6 +47,7 @@ in {
       pkgs.psmisc
       pkgs.htop
       pkgs.git
+      pkgs.p7zip
       pkgs.silver-searcher
       pkgs.renameutils
       mypkgs.custom-neovim
