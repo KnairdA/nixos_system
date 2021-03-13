@@ -41,6 +41,8 @@
 
       desktopManager.xterm.enable = true;
     };
+
+    gvfs.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
