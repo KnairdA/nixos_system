@@ -19,7 +19,7 @@
           allowedIPs = [ "10.100.0.2" ];
         }
         { # majestix
-          publicKey = "Tkoaewh9HB5rIuJVrFgClRF4x7prOtIlSJjiTYCpxis=";
+          publicKey = "SM8UGi+7MuS4aKBi5tPqykdHswlEJvLnYSLMjWg5eCQ=";
           allowedIPs = [ "10.100.0.3" ];
         }
         { # athena
