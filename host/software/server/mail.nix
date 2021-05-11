@@ -1,8 +1,12 @@
 { config, pkgs, ... }:
 
 {
-  imports = [
-    (builtins.fetchTarball "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/v2.3.0/nixos-mailserver-v2.3.0.tar.gz")
+  imports = let
+    release = "nixos-20.09";
+  in [
+    (builtins.fetchTarball {
+      url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/${release}/nixos-mailserver-${release}.tar.gz";
+    })
   ];
 
   mailserver = {
