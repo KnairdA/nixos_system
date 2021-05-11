@@ -54,7 +54,10 @@
     };
   };
 
-  nix.maxJobs = 32;
+  nix = {
+    maxJobs = 32;
+    trustedUsers = [ "root" "common" ];
+  };
 
   system.stateVersion = "20.09";
 }
