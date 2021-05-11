@@ -87,7 +87,6 @@
     enable = true;
     extraConfig = ''
      RESTORE_DEVICE_STATE_ON_STARTUP=1
-     DEVICES_TO_DISABLE_ON_STARTUP="wwan"
     '';
   };
 
@@ -99,5 +98,5 @@
     packages = [ pkgs.terminus_font ];
   };
 
-  system.stateVersion = "18.09";
+  system.stateVersion = "20.09";
 }
