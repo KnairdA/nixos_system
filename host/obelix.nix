@@ -4,6 +4,7 @@
   imports = [
     ./hardware/obelix.nix
     ./software/desktop
+    ./software/server/build.nix
   ];
 
   boot = {
