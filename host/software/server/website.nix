@@ -52,6 +52,18 @@
       "/nixexprs.tar.bz2" = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.bz2";
     };
 
-    "literatelb.org"      = website "literatelb";
+    "literatelb.org"      = let
+      sub = "literatelb";
+    in default {
+      "/".root = "/home/public/${sub}/result";
+      "/".extraConfig = ''
+        location ~* \.(?:html?|xml)$ {
+          expires -1;
+        }
+        location /tangle/ {
+          autoindex on;
+        }
+      '';
+    };
   };
 }
