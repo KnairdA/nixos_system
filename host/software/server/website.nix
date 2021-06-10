@@ -7,6 +7,8 @@
     shell        = pkgs.fish;
   };
 
+  services.nginx.user = "public";
+
   systemd.services.nginx.serviceConfig.ProtectHome = false;
 
   # `public` generates websites using their custom derivations via `nix-build`
@@ -27,11 +29,11 @@
       '';
     };
 
-    proxy = target: {
-      proxyPass  = target;
+    proxy = server: target: {
+      proxyPass = server;
       extraConfig = ''
         expires off;
-        proxy_set_header Host code.kummerlaender.eu;
+        return ${target};
       '';
     };
   in {
@@ -47,9 +49,9 @@
 
     "pkgs.kummerlaender.eu" = default {
       "/".root = "/home/public/pkgs/result";
-      "/nixexprs.tar.gz"  = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.gz";
-      "/nixexprs.tar.xz"  = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.xz";
-      "/nixexprs.tar.bz2" = proxy "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.bz2";
+      "/nixexprs.tar.gz"  = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.gz";
+      "/nixexprs.tar.xz"  = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.xz";
+      "/nixexprs.tar.bz2" = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.bz2";
     };
 
     "literatelb.org"      = let

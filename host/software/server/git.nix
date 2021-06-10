@@ -3,8 +3,8 @@
 {
   services.uwsgi = {
     enable = true;
-    user  = "nginx";
-    group = "nginx";
+    user  = "public";
+    group = "users";
     plugins = [ "cgi" ];
 
     instance = {
@@ -33,7 +33,7 @@
     '';
   };
 
-  users.extraUsers.nginx.extraGroups = [ "git" ];
+  users.extraUsers.public.extraGroups = [ "git" ];
 
   services.nginx.virtualHosts."code.kummerlaender.eu" = {
     addSSL     = true;
@@ -64,7 +64,7 @@
     };
     script = ''
       mkdir /run/cgit
-      chown -R nginx:nginx /run/cgit
+      chown -R public:users /run/cgit
     '';
   };
 

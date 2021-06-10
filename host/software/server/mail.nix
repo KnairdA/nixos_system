@@ -2,7 +2,7 @@
 
 {
   imports = let
-    release = "nixos-20.09";
+    release = "nixos-21.05";
   in [
     (builtins.fetchTarball {
       url = "https://gitlab.com/simple-nixos-mailserver/nixos-mailserver/-/archive/${release}/nixos-mailserver-${release}.tar.gz";
