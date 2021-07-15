@@ -4,6 +4,7 @@
   imports = [
     ./hardware/hephaestus.nix
     ./software/desktop
+    ./software/server/build.nix
   ];
 
   boot = {
@@ -27,10 +28,14 @@
   networking = {
     hostName = "hephaestus";
     firewall.enable = false;
+    networkmanager.enable = true;
   };
 
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+  };
+
+  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11_beta;
 
   networking.wireguard.interfaces = {
     wg0 = {
@@ -49,6 +54,8 @@
       ];
     };
   };
+
+  console.earlySetup = true;
 
   system.stateVersion = "21.05";
 }
