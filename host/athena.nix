@@ -85,9 +85,9 @@
 
   services.tlp = {
     enable = true;
-    extraConfig = ''
-     RESTORE_DEVICE_STATE_ON_STARTUP=1
-    '';
+    settings = {
+      RESTORE_DEVICE_STATE_ON_STARTUP = 1;
+    };
   };
 
   powerManagement.powertop.enable = true;
