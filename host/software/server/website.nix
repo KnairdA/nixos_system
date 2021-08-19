@@ -47,13 +47,6 @@
       '';
     };
 
-    "pkgs.kummerlaender.eu" = default {
-      "/".root = "/home/public/pkgs/result";
-      "/nixexprs.tar.gz"  = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.gz";
-      "/nixexprs.tar.xz"  = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.xz";
-      "/nixexprs.tar.bz2" = proxy "http://code.kummerlaender.eu" "http://code.kummerlaender.eu/pkgs/snapshot/master.tar.bz2";
-    };
-
     "literatelb.org"      = let
       sub = "literatelb";
     in default {
