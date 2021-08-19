@@ -1,13 +1,9 @@
-{ config, pkgs, ... }:
-
-let
-  mypkgs = import <mypkgs> { };
-
-in {
+{ config, pkgs, pkgs-personal, hostname, ... }:
+{
   imports = [
     ./fish.nix
-    ./host/current.nix
     ./user/common.nix
+    (./host + ("/" + hostname + ".nix"))
   ];
 
   console.keyMap = "de";
@@ -20,7 +16,16 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  nix.allowedUsers = [ "common" ];
+  nix = {
+    package = pkgs.nixUnstable;
+
+    allowedUsers = [ "common" ];
+    trustedUsers = [ "root" "common" ];
+
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
 
   networking.nameservers = [
     "1.1.1.1"
@@ -43,14 +48,14 @@ in {
   };
 
   environment = {
-    systemPackages = [
-      pkgs.psmisc
-      pkgs.htop
-      pkgs.git
-      pkgs.p7zip
-      pkgs.silver-searcher
-      pkgs.renameutils
-      mypkgs.custom-neovim
+    systemPackages = with pkgs; [
+      psmisc
+      htop
+      git
+      p7zip
+      silver-searcher
+      renameutils
+      pkgs-personal.custom-neovim
     ];
 
     variables = {
