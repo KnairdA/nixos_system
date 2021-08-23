@@ -4,6 +4,7 @@
   imports = [
     ./hardware/majestix.nix
     ./software/desktop
+    ./software/server/runner.nix
   ];
 
   boot = {
@@ -27,7 +28,11 @@
     networkmanager.enable = true;
   };
 
-  users.extraUsers.common.extraGroups  = [ "networkmanager" ];
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
+  environment.systemPackages = with pkgs; [ virt-manager ];
+
+  users.extraUsers.common.extraGroups  = [ "networkmanager" "libvirtd" ];
 
   services = {
     acpid.enable  = true;
