@@ -7,16 +7,18 @@
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
-  sound.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+    pulse.enable = true;
+  };
 
   hardware = {
     opengl= {
       driSupport32Bit = true;
-    };
-
-    pulseaudio = {
-      enable       = true;
-      support32Bit = true;
     };
   };
 
