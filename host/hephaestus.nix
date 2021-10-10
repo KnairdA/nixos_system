@@ -4,7 +4,7 @@
   imports = [
     ./hardware/hephaestus.nix
     ./software/desktop
-    ./software/server/build.nix
+    ./software/desktop/teensy.nix
   ];
 
   boot = {
