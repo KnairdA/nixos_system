@@ -2,7 +2,7 @@
   description = "System environment of Adrian Kummerlaender";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-21.05;
+    nixpkgs.url = github:NixOS/nixpkgs/nixos-21.11;
     pkgs-personal.url = github:KnairdA/pkgs/master;
   };
 
