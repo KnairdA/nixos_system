@@ -23,7 +23,7 @@
           allowedIPs = [ "10.100.0.3" ];
         }
         { # athena
-          publicKey = "byk4tOSFypOOcIQ0Za1UNilm6Bigm+dQVPxilB7NB0k=";
+          publicKey = "eweByJZDVxq23kJjGV5e1utRdPKo4erEnwwe13bFrkE=";
           allowedIPs = [ "10.100.0.4" ];
         }
         { # schreibfix
