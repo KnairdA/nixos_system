@@ -35,7 +35,18 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11_beta;
+  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
+
+  services.minidlna = {
+    enable = true;
+    mediaDirs = ["V,/mnt/share/"];
+  };
+
+  virtualisation.lxd.enable = true;
+  users.users.common.extraGroups = [ "lxd" ];
 
   networking.wireguard.interfaces = {
     wg0 = {
