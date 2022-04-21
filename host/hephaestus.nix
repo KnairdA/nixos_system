@@ -45,8 +45,11 @@
     mediaDirs = ["V,/mnt/share/"];
   };
 
-  virtualisation.lxd.enable = true;
-  users.users.common.extraGroups = [ "lxd" ];
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
+  };
+  users.users.common.extraGroups = [ "docker" ];
 
   networking.wireguard.interfaces = {
     wg0 = {

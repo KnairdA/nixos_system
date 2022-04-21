@@ -5,6 +5,7 @@
     isNormalUser = true;
     uid          = 1000;
     extraGroups  = [ "wheel" ];
+
     shell        = pkgs.fish;
 
     openssh.authorizedKeys.keys = [
