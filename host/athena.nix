@@ -63,7 +63,10 @@
       };
     };
 
-    printing.enable = true;
+    printing = {
+      enable = true;
+      drivers = [ pkgs.hplip ];
+    };
 
     avahi = {
       enable  = true;
