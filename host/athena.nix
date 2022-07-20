@@ -93,7 +93,11 @@
     exec -a "$0" "$@"
   '') ];
 
-  virtualisation.libvirtd.enable = true;
+  virtualisation.docker = {
+    enable = true;
+    enableNvidia = true;
+  };
+  users.users.common.extraGroups = [ "docker" ];
 
   hardware.trackpoint = {
     enable       = true;
