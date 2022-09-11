@@ -40,11 +40,6 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  services.minidlna = {
-    enable = true;
-    mediaDirs = ["V,/mnt/share/"];
-  };
-
   virtualisation.docker = {
     enable = true;
     enableNvidia = true;
