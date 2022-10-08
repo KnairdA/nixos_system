@@ -37,6 +37,8 @@
 
   hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
 
+  environment.systemPackages = [ pkgs.zenith-nvidia ];
+
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 

@@ -85,13 +85,16 @@
     powerManagement.enable = true;
   };
 
-  environment.systemPackages = [ (pkgs.writeScriptBin "nvidia-offload" ''
-    export __NV_PRIME_RENDER_OFFLOAD=1
-    export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-    export __GLX_VENDOR_LIBRARY_NAME=nvidia
-    export __VK_LAYER_NV_optimus=NVIDIA_only
-    exec -a "$0" "$@"
-  '') ];
+  environment.systemPackages = [
+    pkgs.zenith-nvidia
+    (pkgs.writeScriptBin "nvidia-offload" ''
+      export __NV_PRIME_RENDER_OFFLOAD=1
+      export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export __VK_LAYER_NV_optimus=NVIDIA_only
+      exec -a "$0" "$@"
+    '')
+  ];
 
   virtualisation.docker = {
     enable = true;

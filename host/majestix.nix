@@ -30,7 +30,10 @@
 
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
-  environment.systemPackages = with pkgs; [ virt-manager ];
+  environment.systemPackages = with pkgs; [
+    zenith-nvidia
+    virt-manager
+  ];
 
   users.extraUsers.common.extraGroups  = [ "networkmanager" "libvirtd" ];
 
