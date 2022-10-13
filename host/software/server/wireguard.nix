@@ -38,6 +38,10 @@
           publicKey = "0nd/5vZaerTCUpS6uXsulCTzI3ZsUT2N2pnh7zTo8wg=";
           allowedIPs = [ "10.100.0.7" ];
         }
+        { # idefix
+          publicKey = "sF89wadXLEMXeNHNFPas7umP/QeyXMs3s7XGfXmY2lc=";
+          allowedIPs = [ "10.100.0.8" ];
+        }
       ];
     };
   };
