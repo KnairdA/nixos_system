@@ -14,10 +14,6 @@
       privateKeyFile = "/etc/wireguard/private";
 
       peers = [
-        { # obelix
-          publicKey = "RrsNZKZ17Ol1WHxZesLnenGKnqxiQlE0T8xFP6/5mBE=";
-          allowedIPs = [ "10.100.0.2" ];
-        }
         { # majestix
           publicKey = "SM8UGi+7MuS4aKBi5tPqykdHswlEJvLnYSLMjWg5eCQ=";
           allowedIPs = [ "10.100.0.3" ];
@@ -25,10 +21,6 @@
         { # athena
           publicKey = "eweByJZDVxq23kJjGV5e1utRdPKo4erEnwwe13bFrkE=";
           allowedIPs = [ "10.100.0.4" ];
-        }
-        { # schreibfix
-          publicKey = "WBvUFZ4mgTi6O8BB6L4snRKMWHcy5QiROdEFCwYbbUo=";
-          allowedIPs = [ "10.100.0.5" ];
         }
         { # mobiltelefon
           publicKey = "jUtbAF3TZDEFXlL+YTV3g26wP0IWGbpiCFGXjxo5TXE=";
