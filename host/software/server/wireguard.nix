@@ -31,7 +31,7 @@
           allowedIPs = [ "10.100.0.7" ];
         }
         { # idefix
-          publicKey = "sF89wadXLEMXeNHNFPas7umP/QeyXMs3s7XGfXmY2lc=";
+          publicKey = "4Q1Glnceec8FOtkq8UnaYtlwsR1VIvs6lTalavNQp0A=s";
           allowedIPs = [ "10.100.0.8" ];
         }
       ];
