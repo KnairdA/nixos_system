@@ -4,6 +4,7 @@
   imports = [
     ./hardware/majestix.nix
     ./software/desktop
+    ./software/desktop/xterm.nix
     ./software/server/runner.nix
   ];
 

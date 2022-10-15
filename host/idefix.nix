@@ -4,7 +4,6 @@
   imports = [
     ./hardware/idefix.nix
     ./software/desktop
-    ./software/desktop/gnome.nix
   ];
 
   console.keyMap = pkgs.lib.mkForce "us";
@@ -21,7 +20,6 @@
     upower.enable = true;
     acpid.enable  = true;
     blueman.enable = true;
-    xserver.libinput.enable = true;
   };
 
   powerManagement.powertop.enable = true;
@@ -29,7 +27,31 @@
   services.xserver = {
     layout = pkgs.lib.mkForce "us";
     xkbVariant = pkgs.lib.mkForce "";
+
+    libinput.enable = true;
+
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
+
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    cheese
+    gnome-music
+    simple-scan
+    geary
+    tali
+    iagno
+    hitori
+    atomix
+  ]);
+
+  environment.systemPackages = with pkgs.gnomeExtensions; [
+    gesture-improvements
+    pop-shell
+  ];
 
   networking.wireguard.interfaces = {
     wg0 = {

@@ -4,6 +4,7 @@
   imports = [
     ./hardware/athena.nix
     ./software/desktop
+    ./software/desktop/xterm.nix
   ];
 
   boot = {

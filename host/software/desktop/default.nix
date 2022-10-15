@@ -37,11 +37,7 @@
           enable = true;
           user   = "common";
         };
-
-        lightdm.enable = true;
       };
-
-      desktopManager.xterm.enable = true;
     };
 
     gvfs.enable = true;

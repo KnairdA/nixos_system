@@ -4,6 +4,7 @@
   imports = [
     ./hardware/hephaestus.nix
     ./software/desktop
+    ./software/desktop/xterm.nix
     ./software/desktop/teensy.nix
   ];
 
