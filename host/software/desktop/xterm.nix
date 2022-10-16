@@ -1,8 +1,8 @@
 { pkgs, ... }:
 
 {
-  services = {
-    xserver.lightdm.enable = true;
+  services.xserver = {
+    displayManager.lightdm.enable = true;
     desktopManager.xterm.enable = true;
   };
 }
