@@ -19,8 +19,10 @@
   nix = {
     package = pkgs.nixUnstable;
 
-    allowedUsers = [ "common" ];
-    trustedUsers = [ "root" "common" ];
+    settings = {
+      allowed-users = [ "common" ];
+      trusted-users = [ "root" "common" ];
+    };
 
     extraOptions = ''
       experimental-features = nix-command flakes
