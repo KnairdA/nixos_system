@@ -15,7 +15,7 @@
         comp-lzo no
         tls-version-min 1.2
         ca ${./asset/T-TeleSec_GlobalRoot_Class_2.pem}
-        verify-x509-name "C=DE, ST=Baden-Wuerttemberg, L=Karlsruhe, O=Karlsruhe Institute of Technology, OU=Steinbuch Centre for Computing, CN=ovpn.scc.kit.edu" subject
+        verify-x509-name "C=DE, ST=Baden-Wuerttemberg, L=Karlsruhe, O=Karlsruhe Institute of Technology, CN=ovpn.scc.kit.edu" subject
         cipher AES-256-CBC
         auth SHA384
         verb 3
