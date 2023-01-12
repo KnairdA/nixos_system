@@ -14,8 +14,6 @@
       support32Bit = true;
     };
     pulse.enable = true;
-    wireplumber.enable = false;
-    media-session.enable = true;
   };
 
   hardware = {
