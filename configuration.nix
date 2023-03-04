@@ -1,7 +1,6 @@
 { config, pkgs, pkgs-personal, hostname, ... }:
 {
   imports = [
-    ./fish.nix
     ./user/common.nix
     (./host + ("/" + hostname + ".nix"))
   ];
