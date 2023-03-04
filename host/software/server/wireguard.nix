@@ -14,8 +14,8 @@
       privateKeyFile = "/etc/wireguard/private";
 
       peers = [
-        { # majestix
-          publicKey = "SM8UGi+7MuS4aKBi5tPqykdHswlEJvLnYSLMjWg5eCQ=";
+        { # atlas
+          publicKey = "PyEf1LU8cqfhzdPuiTz1itOX3Q87DwZjEDFjGKO8MHc="
           allowedIPs = [ "10.100.0.3" ];
         }
         { # athena
