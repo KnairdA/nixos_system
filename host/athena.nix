@@ -88,6 +88,7 @@
 
   environment.systemPackages = [
     pkgs.zenith-nvidia
+    pkgs.virt-manager
     (pkgs.writeScriptBin "nvidia-offload" ''
       export __NV_PRIME_RENDER_OFFLOAD=1
       export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -97,9 +98,12 @@
     '')
   ];
 
-  virtualisation.docker = {
-    enable = true;
-    enableNvidia = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    docker = {
+      enable = true;
+      enableNvidia = true;
+    };
   };
   users.users.common.extraGroups = [ "docker" ];
 
