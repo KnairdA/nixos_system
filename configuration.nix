@@ -38,6 +38,7 @@
   ];
 
   programs = {
+    fish.enable = true;
     bash.enableCompletion = true;
     gnupg.agent = {
       enable = true;
@@ -47,9 +48,11 @@
 
   services.openssh = {
     enable = true;
-    passwordAuthentication = false;
-    permitRootLogin = "no";
-    forwardX11 = true;
+    settings = {
+      PasswordAuthentication = false;
+      PermitRootLogin = "no";
+      X11Forwarding = true;
+    };
   };
 
   environment = {
