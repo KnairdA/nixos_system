@@ -50,6 +50,10 @@
     };
   };
 
+  networking.firewall = {
+    enable = true;
+    interfaces."wg0".allowedTCPPorts = [ 5900 8080 8888 ];
+  };
   services.gitlab-runner = {
     enable = true;
     services = {
