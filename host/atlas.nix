@@ -69,6 +69,12 @@
         tagList = [ "nix" "has-gpu" ];
         limit = 1;
       };
+      openlb-ci-extra = {
+        executor = "shell";
+        registrationConfigFile = "/etc/gitlab-runner.conf";
+        tagList = [ "nix" "gcc" "clang" "mpi" "cuda" "has-flake" ];
+        limit = 4;
+      };
     };
   };
 
