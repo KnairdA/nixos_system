@@ -54,6 +54,12 @@
     enable = true;
     interfaces."wg0".allowedTCPPorts = [ 5900 8080 8888 ];
   };
+
+  services.printing = {
+    enable = true;
+    drivers = [ pkgs.hplip ];
+  };
+
   services.gitlab-runner = {
     enable = true;
     services = {
