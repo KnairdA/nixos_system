@@ -2,46 +2,33 @@
 
 {
   boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ ];
-    };
+    initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+    initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
 
     loader = {
       systemd-boot.enable = true;
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-    };
-
-    initrd = {
-      secrets = {
-        "/crypto_keyfile.bin" = null;
-      };
-      # Enable swap on luks
-      luks.devices."luks-3a4818e8-af59-45de-9777-131c7a083d53" = {
-        device = "/dev/disk/by-uuid/3a4818e8-af59-45de-9777-131c7a083d53";
-        keyFile = "/crypto_keyfile.bin";
-      };
+      efi.canTouchEfiVariables = true;
     };
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/1e96455d-e8dd-4510-9e3d-e5f872d785f9";
+    device = "/dev/disk/by-uuid/34f1948d-36a7-4c1f-95fe-5dc7dd53a46e";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."luks-e3fe3335-82a9-4fcb-b45e-bee2f6382238".device = "/dev/disk/by-uuid/e3fe3335-82a9-4fcb-b45e-bee2f6382238";
+  boot.initrd.luks.devices = {
+    "luks-f6c3a1a8-bc09-4fcd-a979-4fe82dc4dc71".device = "/dev/disk/by-uuid/f6c3a1a8-bc09-4fcd-a979-4fe82dc4dc71";
+    "luks-49b6b8ab-1d8f-43d3-ba58-d548316f197a".device = "/dev/disk/by-uuid/49b6b8ab-1d8f-43d3-ba58-d548316f197a";
+  };
 
-  fileSystems."/boot/efi" = {
-    device = "/dev/disk/by-uuid/7ABB-606F";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/D45E-0E82";
     fsType = "vfat";
   };
 
-  swapDevices = [ { device = "/dev/disk/by-uuid/4951a94e-7a95-4148-b6d8-9f3f7d1c195f"; } ];
+  swapDevices = [ { device = "/dev/disk/by-uuid/f198c957-dc39-4973-86c0-8fde06672ff9"; } ];
 
   networking.useDHCP = lib.mkDefault true;
 

@@ -15,7 +15,7 @@
 
       peers = [
         { # atlas
-          publicKey = "PyEf1LU8cqfhzdPuiTz1itOX3Q87DwZjEDFjGKO8MHc="
+          publicKey = "uuu0Ajabq6fkSdkw7SWLAt0cSYiXX0KWyj5amqVjqQw="
           allowedIPs = [ "10.100.0.3" ];
         }
         { # athena
