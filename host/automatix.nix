@@ -12,11 +12,10 @@
 
   boot.loader.grub = {
     enable  = true;
-    version = 2;
     device  = "/dev/sda";
   };
 
-  nix.allowedUsers = [ "public" ];
+  nix.settings.allowed-users = [ "public" ];
 
   networking = {
     hostName = "automatix";
@@ -56,9 +55,30 @@
     };
   };
 
+  systemd.timers."generate-ical-of-org-agenda" = {
+    enable = true;
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "daily";
+      Persistent = true;
+      Unit = "generate-ical-of-org-agenda.service";
+    };
+  };
+
+  systemd.services."generate-ical-of-org-agenda" = {
+    enable = true;
+    script = "${pkgs.emacs-nox}/bin/emacs -batch -l /var/lib/syncthing/org-cal-export.el";
+    serviceConfig = {
+      Type = "oneshot";
+      User = "syncthing";
+    };
+  };
+
+  users.users.syncthing.shell = pkgs.bash;
+
   security.acme = {
     acceptTerms = true;
-    email = "key@kummerlaender.eu";
+    defaults.email = "key@kummerlaender.eu";
   };
 
   system.stateVersion = "18.09";
