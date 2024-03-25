@@ -15,7 +15,7 @@
 
       peers = [
         { # atlas
-          publicKey = "uuu0Ajabq6fkSdkw7SWLAt0cSYiXX0KWyj5amqVjqQw="
+          publicKey = "uuu0Ajabq6fkSdkw7SWLAt0cSYiXX0KWyj5amqVjqQw=";
           allowedIPs = [ "10.100.0.3" ];
         }
         { # athena
@@ -31,7 +31,7 @@
           allowedIPs = [ "10.100.0.7" ];
         }
         { # idefix
-          publicKey = "4Q1Glnceec8FOtkq8UnaYtlwsR1VIvs6lTalavNQp0A=s";
+          publicKey = "4Q1Glnceec8FOtkq8UnaYtlwsR1VIvs6lTalavNQp0A=";
           allowedIPs = [ "10.100.0.8" ];
         }
       ];
