@@ -20,7 +20,7 @@
   nixpkgs.config.allowUnfree = true;
 
   nix = {
-    package = pkgs.nixUnstable;
+    package = pkgs.nixVersions.latest;
 
     settings = {
       allowed-users = [ "common" ];
