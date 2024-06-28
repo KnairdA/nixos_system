@@ -29,14 +29,16 @@
 
     xserver = {
       enable = true;
-      layout = "de";
-      xkbOptions = "caps:escape";
+      xkb = {
+        options = "caps:escape";
+        layout = "de";
+      };
+    };
 
-      displayManager = {
-        autoLogin = {
-          enable = true;
-          user   = "common";
-        };
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user   = "common";
       };
     };
 

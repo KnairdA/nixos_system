@@ -54,12 +54,12 @@
 
     xserver = {
       videoDrivers = [ "nvidia" ];
+    };
 
-      libinput = {
-        enable = true;
-        touchpad = {
-          accelSpeed = "2.0";
-        };
+    libinput = {
+      enable = true;
+      touchpad = {
+        accelSpeed = "2.0";
       };
     };
 
@@ -70,7 +70,7 @@
 
     avahi = {
       enable  = true;
-      nssmdns = true;
+      nssmdns4 = true;
     };
   };
 
