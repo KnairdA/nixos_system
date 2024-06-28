@@ -55,12 +55,11 @@
     xserver = {
       videoDrivers = [ "nvidia" ];
 
-      synaptics = {
+      libinput = {
         enable = true;
-        twoFingerScroll  = true;
-        horizontalScroll = false;
-        palmDetect       = true;
-        minSpeed         = "1.5";
+        touchpad = {
+          accelSpeed = "2.0";
+        };
       };
     };
 
@@ -100,12 +99,7 @@
 
   virtualisation = {
     libvirtd.enable = true;
-    docker = {
-      enable = true;
-      enableNvidia = true;
-    };
   };
-  users.users.common.extraGroups = [ "docker" ];
 
   hardware.trackpoint = {
     enable       = true;
