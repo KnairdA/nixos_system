@@ -65,21 +65,14 @@
       openlb-ci = {
         executor = "shell";
         registrationConfigFile = "/etc/gitlab-runner.conf";
-        tagList = [ "nix" "has-gpu" ];
         limit = 1;
       };
       openlb-ci-extra = {
         executor = "shell";
         registrationConfigFile = "/etc/gitlab-runner.conf";
-        tagList = [ "nix" "gcc" "clang" "mpi" "cuda" "has-flake" ];
         limit = 4;
       };
     };
-  };
-
-  systemd.services.gitlab-runner.serviceConfig = {
-    CPUQuota   = "400%";
-    MemoryHigh = "8G";
   };
 
   users.users.gitlab-runner.isNormalUser = true;
