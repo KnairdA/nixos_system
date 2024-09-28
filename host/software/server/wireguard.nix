@@ -23,7 +23,7 @@
           allowedIPs = [ "10.100.0.4" ];
         }
         { # mobiltelefon
-          publicKey = "jUtbAF3TZDEFXlL+YTV3g26wP0IWGbpiCFGXjxo5TXE=";
+          publicKey = "4tG2tdM9h/wbxjeFPF7ccLfZ9UghhrAhc/qoqGeL+Sw=";
           allowedIPs = [ "10.100.0.6" ];
         }
         { # hephaestus
