@@ -76,10 +76,11 @@
     };
 
     shellInit = ''
-      export LC_NUMERIC=de_DE.UTF8
       export LC_TIME=de_DE.UTF8
       export LC_MONETARY=de_DE.UTF8
       export LC_MEASUREMENT=de_DE.UTF8
+      export LC_NUMERIC=en_US.UTF8
+
     '';
   };
 }
