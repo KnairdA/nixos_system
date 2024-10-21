@@ -19,7 +19,7 @@
   hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
 
   environment.systemPackages = with pkgs; [
-    nvtop
+    nvtopPackages.full
   ];
 
   virtualisation.docker = {
@@ -64,13 +64,8 @@
     services = {
       openlb-ci = {
         executor = "shell";
-        registrationConfigFile = "/etc/gitlab-runner.conf";
+        authenticationTokenConfigFile = "/etc/gitlab-runner.conf";
         limit = 1;
-      };
-      openlb-ci-extra = {
-        executor = "shell";
-        registrationConfigFile = "/etc/gitlab-runner.conf";
-        limit = 4;
       };
     };
   };
