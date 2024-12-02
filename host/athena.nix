@@ -59,7 +59,11 @@
     libinput = {
       enable = true;
       touchpad = {
-        accelSpeed = "2.0";
+        accelSpeed = "4.0";
+        tapping = false;
+        tappingDragLock = false;
+        scrollMethod = "twofinger";
+        disableWhileTyping = true;
       };
     };
 
@@ -75,6 +79,7 @@
   };
 
   hardware.nvidia = {
+    open = true;
     package = pkgs.linuxPackages.nvidia_x11;
     prime = {
       offload.enable = true;

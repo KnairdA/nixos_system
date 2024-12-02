@@ -39,7 +39,7 @@
 
   programs = {
     fish.enable = true;
-    bash.enableCompletion = true;
+    bash.completion.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;

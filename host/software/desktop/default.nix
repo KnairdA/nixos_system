@@ -7,6 +7,8 @@
 
   fileSystems."/".options = [ "noatime" "nodiratime" "discard" ];
 
+  hardware.graphics.enable32Bit = true;
+
   services.pipewire = {
     enable = true;
     alsa = {
@@ -14,12 +16,6 @@
       support32Bit = true;
     };
     pulse.enable = true;
-  };
-
-  hardware = {
-    opengl= {
-      driSupport32Bit = true;
-    };
   };
 
   services = {
