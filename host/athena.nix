@@ -78,16 +78,20 @@
     };
   };
 
-  hardware.nvidia = {
-    open = true;
-    package = pkgs.linuxPackages.nvidia_x11;
-    prime = {
-      offload.enable = true;
+  hardware = {
+    nvidia = {
+      open = true;
+      package = pkgs.linuxPackages.nvidia_x11;
+      prime = {
+        offload.enable = true;
 
-      intelBusId  = "PCI:0:2:0";
-      nvidiaBusId = "PCI:1:0:0";
+        intelBusId  = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+      powerManagement.enable = true;
     };
-    powerManagement.enable = true;
+
+    nvidia-container-toolkit.enable = true;
   };
 
   environment.systemPackages = [
@@ -104,7 +108,15 @@
 
   virtualisation = {
     libvirtd.enable = true;
+    docker = {
+      enable = true;
+      autoPrune = {
+        enable = true;
+        dates = "daily";
+      };
+    };
   };
+  users.users.common.extraGroups = [ "docker" ];
 
   hardware.trackpoint = {
     enable       = true;
