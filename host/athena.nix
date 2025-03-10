@@ -114,6 +114,10 @@
         enable = true;
         dates = "daily";
       };
+      # mitigate conflict with some public WLANs
+      daemon.settings."default-address-pools" = [
+        { "base" = "172.27.0.0/16"; "size" = 24; }
+      ];
     };
   };
   users.users.common.extraGroups = [ "docker" ];
@@ -137,7 +141,7 @@
     };
   };
 
-  powerManagement.powertop.enable = true;
+  #powerManagement.powertop.enable = true;
 
   system.stateVersion = "21.11";
 }
