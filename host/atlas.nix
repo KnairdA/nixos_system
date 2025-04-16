@@ -16,21 +16,35 @@
     videoDrivers = [ "nvidia" ];
   };
 
-  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
+  hardware = {
+    nvidia = {
+      open = true;
+      package = pkgs.linuxPackages.nvidia_x11;
+    };
+
+    nvidia-container-toolkit.enable = true;
+  };
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
   ];
 
-  virtualisation.docker = {
-    enable = true;
-    enableNvidia = true;
-    autoPrune = {
+  virtualisation = {
+    docker = {
       enable = true;
-      dates = "daily";
+      autoPrune = {
+        enable = true;
+        dates = "daily";
+      };
     };
+
+    libvirtd.enable = true;
   };
+
   users.users.common.extraGroups = [ "docker" ];
+  users.groups.libvirtd.members = [ "common" ];
+
+  programs.virt-manager.enable = true;
 
   networking.wireguard.interfaces = {
     wg0 = {
@@ -51,7 +65,7 @@
 
   networking.firewall = {
     enable = true;
-    interfaces."wg0".allowedTCPPorts = [ 5900 8080 8888 ];
+    interfaces."wg0".allowedTCPPorts = [ 5900 8000 8080 8888 ];
   };
 
   services.printing = {
@@ -68,6 +82,11 @@
         limit = 1;
       };
     };
+  };
+
+  systemd.services.gitlab-runner.serviceConfig = {
+    CPUWeight = "idle";
+    CPUQuota = "800%";
   };
 
   users.users.gitlab-runner.isNormalUser = true;
