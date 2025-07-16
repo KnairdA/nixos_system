@@ -45,6 +45,9 @@
     ntfs3g
   ];
 
+  programs.i3lock.enable = true;
+  security.pam.services.i3lock.enable = true;
+
   boot.kernel.sysctl = {
     "kernel.perf_event_paranoid" = -1; # allow user to perform perf analysis
   };
