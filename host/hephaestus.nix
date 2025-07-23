@@ -32,11 +32,16 @@
     networkmanager.enable = true;
   };
 
-  services.xserver = {
-    videoDrivers = [ "nvidia" ];
-  };
+#  services.xserver = {
+#    videoDrivers = [ "nvidia" ];
+#  };
 
-  hardware.nvidia.package = pkgs.linuxPackages.nvidia_x11;
+  programs.niri.enable = true;
+
+  hardware.nvidia = {
+    open = true;
+    package = pkgs.linuxPackages.nvidia_x11;
+  };
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
