@@ -4,8 +4,8 @@
   imports = [
     ./hardware/hephaestus.nix
     ./software/desktop
-    ./software/desktop/xterm.nix
-    ./software/desktop/teensy.nix
+    #./software/desktop/xterm.nix
+    #./software/desktop/teensy.nix
   ];
 
   boot = {
@@ -32,11 +32,16 @@
     networkmanager.enable = true;
   };
 
-#  services.xserver = {
-#    videoDrivers = [ "nvidia" ];
-#  };
+  services.xserver = {
+    videoDrivers = [ "nvidia" ];
+  };
 
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   programs.niri.enable = true;
+  programs.xwayland.enable = true;
 
   hardware.nvidia = {
     open = true;
