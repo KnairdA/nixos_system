@@ -43,6 +43,14 @@
   programs.niri.enable = true;
   programs.xwayland.enable = true;
 
+  xdg.portal = {
+    xdgOpenUsePortal = true;
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+    ];
+  };
+
   hardware.nvidia = {
     open = true;
     package = pkgs.linuxPackages.nvidia_x11;
@@ -51,10 +59,9 @@
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  virtualisation.docker = {
-    enable = true;
-    enableNvidia = true;
-  };
+  hardware.nvidia-container-toolkit.enable = true;
+  virtualisation.docker.enable = true;
+
   users.users.common.extraGroups = [ "docker" ];
 
   networking.wireguard.interfaces = {
