@@ -6,6 +6,8 @@
     initrd.kernelModules = [ ];
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    kernelParams = [ "nvidia-drm.modeset=1" ];
+
 
     loader = {
       systemd-boot.enable = true;

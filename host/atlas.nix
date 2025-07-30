@@ -4,7 +4,6 @@
   imports = [
     ./hardware/atlas.nix
     ./software/desktop
-    ./software/desktop/xterm.nix
   ];
 
   networking = {
@@ -22,12 +21,47 @@
       package = pkgs.linuxPackages.nvidia_x11;
     };
 
+    graphics.extraPackages = [ pkgs.libva ];
+
     nvidia-container-toolkit.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
+
+    nvidia-vaapi-driver
   ];
+
+  services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = "common";
+    };
+    sddm = {
+      enable = true;
+      wayland.enable = true;
+    };
+  };
+  programs.niri.enable = true;
+  programs.xwayland.enable = true;
+
+  security.polkit.enable = true;
+
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
 
   virtualisation = {
     docker = {
@@ -45,6 +79,13 @@
   users.groups.libvirtd.members = [ "common" ];
 
   programs.virt-manager.enable = true;
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   networking.wireguard.interfaces = {
     wg0 = {
@@ -79,14 +120,14 @@
       openlb-ci = {
         executor = "shell";
         authenticationTokenConfigFile = "/etc/gitlab-runner.conf";
-        limit = 1;
+        limit = 2;
       };
     };
   };
 
   systemd.services.gitlab-runner.serviceConfig = {
     CPUWeight = "idle";
-    CPUQuota = "800%";
+    CPUQuota = "1600%";
   };
 
   users.users.gitlab-runner.isNormalUser = true;
