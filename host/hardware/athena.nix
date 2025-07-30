@@ -8,10 +8,26 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
-  boot.kernelModules = [ "kvm-intel" "fuse" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
+    initrd.kernelModules = [ "dm-snapshot" ];
+    kernelModules = [ "kvm-intel" "fuse" ];
+    extraModulePackages = [ ];
+    kernelParams = [ "nvidia-drm.modeset=1" ];
+
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+
+    initrd.luks.devices = {
+      encrypted = {
+        device = "/dev/nvme0n1p2";
+        preLVM        = true;
+        allowDiscards = true;
+      };
+    };
+  };
 
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/3af135f5-9bfe-4ab4-abb3-2e93caad08ea";

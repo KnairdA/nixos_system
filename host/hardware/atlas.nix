@@ -8,7 +8,6 @@
     extraModulePackages = [ ];
     kernelParams = [ "nvidia-drm.modeset=1" ];
 
-
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;

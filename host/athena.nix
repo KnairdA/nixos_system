@@ -6,46 +6,42 @@
     ./software/desktop
   ];
 
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-
-    initrd.luks.devices = {
-      encrypted = {
-        device = "/dev/nvme0n1p2";
-        preLVM        = true;
-        allowDiscards = true;
-      };
-    };
-  };
-
   networking = {
     hostName = "athena";
-    firewall.enable = false;
     networkmanager.enable = true;
   };
 
   users.extraUsers.common.extraGroups  = [ "networkmanager" "libvirtd" ];
 
-  networking.wireguard.interfaces = {
-    wg0 = {
-      ips = [ "10.100.0.4/24" ];
+  hardware = {
+    nvidia = {
+      open = true;
+      package = pkgs.linuxPackages.nvidia_x11;
+      prime = {
+        offload.enable = true;
 
-      privateKeyFile = "/etc/wireguard/private";
-
-      peers = [
-        { # automatix
-          publicKey  = "B0tkjq+5SfECKx1gWEP5JVWOIaRWL2JNE7iSpMmN4F0=";
-          allowedIPs = [ "10.100.0.0/24" ];
-          endpoint   = "kummerlaender.eu:54321";
-
-          persistentKeepalive = 10;
-        }
-      ];
+        intelBusId  = "PCI:0:2:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+      powerManagement.enable = true;
     };
+
+    graphics.extraPackages = [ pkgs.libva ];
+
+    nvidia-container-toolkit.enable = true;
   };
+
+  environment.systemPackages = [
+    pkgs.zenith-nvidia
+    pkgs.virt-manager
+    (pkgs.writeScriptBin "nvidia-offload" ''
+      export __NV_PRIME_RENDER_OFFLOAD=1
+      export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
+      export __GLX_VENDOR_LIBRARY_NAME=nvidia
+      export __VK_LAYER_NV_optimus=NVIDIA_only
+      exec -a "$0" "$@"
+    '')
+  ];
 
   services = {
     upower.enable = true;
@@ -53,6 +49,24 @@
 
     xserver = {
       videoDrivers = [ "nvidia" ];
+    };
+
+    displayManager = {
+      autoLogin = {
+        enable = true;
+        user = "common";
+      };
+      sddm = {
+        enable = true;
+        wayland.enable = true;
+      };
+    };
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
     };
 
     libinput = {
@@ -77,59 +91,20 @@
     };
   };
 
-  hardware = {
-    nvidia = {
-      open = true;
-      package = pkgs.linuxPackages.nvidia_x11;
-      prime = {
-        offload.enable = true;
-
-        intelBusId  = "PCI:0:2:0";
-        nvidiaBusId = "PCI:1:0:0";
-      };
-      powerManagement.enable = true;
-    };
-
-    nvidia-container-toolkit.enable = true;
+  programs = {
+    niri.enable = true;
+    xwayland.enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.zenith-nvidia
-    pkgs.virt-manager
-    (pkgs.writeScriptBin "nvidia-offload" ''
-      export __NV_PRIME_RENDER_OFFLOAD=1
-      export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
-      export __GLX_VENDOR_LIBRARY_NAME=nvidia
-      export __VK_LAYER_NV_optimus=NVIDIA_only
-      exec -a "$0" "$@"
-    '')
-  ];
-
-  services.displayManager = {
-    autoLogin = {
-      enable = true;
-      user = "common";
-    };
-    sddm = {
-      enable = true;
-      wayland.enable = true;
-    };
-  };
-  programs.niri.enable = true;
-  programs.xwayland.enable = true;
+  security.polkit.enable = true;
 
   xdg.portal = {
-    xdgOpenUsePortal = true;
     enable = true;
-    extraPortals = [
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
       pkgs.xdg-desktop-portal-gnome
+      pkgs.xdg-desktop-portal-gtk
     ];
-  };
-
-  hardware.trackpoint = {
-    enable       = true;
-    emulateWheel = true;
-    speed        = 250;
   };
 
   hardware.bluetooth.enable = true;
@@ -160,6 +135,24 @@
     };
   };
   users.users.common.extraGroups = [ "docker" ];
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "10.100.0.4/24" ];
+
+      privateKeyFile = "/etc/wireguard/private";
+
+      peers = [
+        { # automatix
+          publicKey  = "B0tkjq+5SfECKx1gWEP5JVWOIaRWL2JNE7iSpMmN4F0=";
+          allowedIPs = [ "10.100.0.0/24" ];
+          endpoint   = "kummerlaender.eu:54321";
+
+          persistentKeepalive = 10;
+        }
+      ];
+    };
+  };
 
 
   system.stateVersion = "21.11";
