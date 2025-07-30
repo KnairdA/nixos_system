@@ -4,7 +4,6 @@
   imports = [
     ./hardware/athena.nix
     ./software/desktop
-    ./software/desktop/xterm.nix
   ];
 
   boot = {
@@ -106,21 +105,26 @@
     '')
   ];
 
-  virtualisation = {
-    libvirtd.enable = true;
-    docker = {
+  services.displayManager = {
+    autoLogin = {
       enable = true;
-      autoPrune = {
-        enable = true;
-        dates = "daily";
-      };
-      # mitigate conflict with some public WLANs
-      daemon.settings."default-address-pools" = [
-        { "base" = "172.27.0.0/16"; "size" = 24; }
-      ];
+      user = "common";
+    };
+    sddm = {
+      enable = true;
+      wayland.enable = true;
     };
   };
-  users.users.common.extraGroups = [ "docker" ];
+  programs.niri.enable = true;
+  programs.xwayland.enable = true;
+
+  xdg.portal = {
+    xdgOpenUsePortal = true;
+    enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gnome
+    ];
+  };
 
   hardware.trackpoint = {
     enable       = true;
@@ -141,7 +145,22 @@
     };
   };
 
-  #powerManagement.powertop.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    docker = {
+      enable = true;
+      autoPrune = {
+        enable = true;
+        dates = "daily";
+      };
+      # mitigate conflict with some public WLANs
+      daemon.settings."default-address-pools" = [
+        { "base" = "172.27.0.0/16"; "size" = 24; }
+      ];
+    };
+  };
+  users.users.common.extraGroups = [ "docker" ];
+
 
   system.stateVersion = "21.11";
 }
