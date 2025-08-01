@@ -11,7 +11,7 @@
   boot = {
     initrd.availableKernelModules = [ "xhci_pci" "thunderbolt" "nvme" "usb_storage" "sd_mod" "sdhci_pci" ];
     initrd.kernelModules = [ "dm-snapshot" ];
-    kernelModules = [ "kvm-intel" "fuse" ];
+    kernelModules = [ "kvm-intel" "fuse" "uinput" ];
     extraModulePackages = [ ];
     kernelParams = [ "nvidia-drm.modeset=1" ];
 

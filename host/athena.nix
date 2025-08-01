@@ -26,21 +26,29 @@
       powerManagement.enable = true;
     };
 
-    graphics.extraPackages = [ pkgs.libva ];
+    graphics.extraPackages = with pkgs; [
+      libva
+      intel-media-driver
+    ];
 
     nvidia-container-toolkit.enable = true;
   };
 
-  environment.systemPackages = [
-    pkgs.zenith-nvidia
-    pkgs.virt-manager
-    (pkgs.writeScriptBin "nvidia-offload" ''
+  environment.systemPackages = with pkgs; [
+    zenith-nvidia
+    virt-manager
+    (writeScriptBin "nvidia-offload" ''
       export __NV_PRIME_RENDER_OFFLOAD=1
       export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
       export __GLX_VENDOR_LIBRARY_NAME=nvidia
       export __VK_LAYER_NV_optimus=NVIDIA_only
       exec -a "$0" "$@"
     '')
+
+    nvidia-vaapi-driver
+    intel-media-driver
+    vaapiVdpau
+    libvdpau-va-gl
   ];
 
   services = {
